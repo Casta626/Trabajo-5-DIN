@@ -15,8 +15,8 @@ class Window(QWidget):
 
         self.nombre = QLineEdit()
         self.apellidos = QLineEdit()
-        self.tipo_ordenador = QLineEdit()
-        self.marca = QLineEdit()
+        self.tipo_ordenador = QComboBox()
+        self.marca = QComboBox()
         self.precio = QLineEdit()
         self.n_perifericos = QSpinBox()
         self.n_perifericos.setRange(0, 1000)
@@ -24,12 +24,15 @@ class Window(QWidget):
         self.direccion = QLineEdit()
         self.comments = QTextEdit()
 
-        self.prueba = QComboBox()
-        self.prueba.addItems("1")
-        self.prueba.addItems("2")
-        self.prueba.addItems("3")
-        self.prueba.addItems("4")
-        self.prueba.addItems("5")
+        
+        self.tipo_ordenador.addItem("Sobremesa")
+        self.tipo_ordenador.addItem("Portátil")
+
+        self.marca.addItem("Asus")
+        self.marca.addItem("Acer")
+        self.marca.addItem("HP")
+        self.marca.addItem("Lenovo")
+        self.marca.addItem("MSI")
 
         self.generate_btn = QPushButton("Generar PDF")
 
@@ -42,7 +45,6 @@ class Window(QWidget):
         layout.addRow("Nº de perifericos", self.n_perifericos)
         layout.addRow("Periféricos extra", self.perifericos)
         layout.addRow("Dirección", self.direccion)
-        layout.addRow("Prueba", self.prueba)
         
 
         layout.addRow("Comentarios", self.comments)
@@ -58,13 +60,13 @@ class Window(QWidget):
         self.data = {
             'nombre': self.nombre.text(),
             'apellidos': self.apellidos.text(),
-            'tipo_ordenador': self.tipo_ordenador.text(),
-            'marca': self.marca.text(),
+            'tipo_ordenador': str(self.tipo_ordenador.currentText()),
+            'marca': str(self.marca.currentText()),
             'precio': self.precio.text(),
             'direccion': self.direccion.text(),
             'perifericos': self.perifericos.text(),
             'n_perifericos': str(self.n_perifericos.value()),
-            'prueba': str(self.prueba.currentText()),
+            # 'prueba': str(self.prueba.currentText()),
             'comments': self.comments.toPlainText()
         }
         outfile = "result2.pdf"
@@ -104,9 +106,7 @@ class Window(QWidget):
 
         canvas.drawString(472, ystart-(3*32), "Python")
 
-        canvas.drawString(472, ystart-(2*32), self.data['prueba'])
-
-        # z
+        # canvas.drawString(472, ystart-(2*32), self.data['prueba'])
 
         # Sería posible establecer un límite en el número de caracteres:
         # field.setMaxLength(25)
