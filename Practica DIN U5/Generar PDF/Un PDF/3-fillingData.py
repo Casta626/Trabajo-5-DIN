@@ -106,7 +106,7 @@ class Window(QWidget):
 
         canvas.drawString(472, ystart-(2*32), self.data['prueba'])
 
-       
+        # z
 
         # Sería posible establecer un límite en el número de caracteres:
         # field.setMaxLength(25)
