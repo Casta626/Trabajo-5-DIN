@@ -22,13 +22,13 @@ class MainWindow(QMainWindow):
         pen = pg.mkPen(color=(255, 0, 0))
         
         # Qt.SolidLine, Qt.DashLine, Qt.DotLine, Qt.DashDotLine y Qt.DashDotDotLine 
-        #pen = pg.mkPen(color=(255, 0, 0), width=15, style=QtCore.Qt.DashLine)
+        pen = pg.mkPen(color=(255, 0, 0), width=15, style=QtCore.Qt.DashLine)
         
         self.graphWidget.plot(hour, temperature, pen=pen)
 
         # También podemos poner marcas en los puntos
-        #self.graphWidget.plot(hour, temperature, symbol='+')
-        #self.graphWidget.plot(hour, temperature, pen=pen, symbol='+', symbolSize=30, symbolBrush=('b'))
+        self.graphWidget.plot(hour, temperature, symbol='+')
+        # self.graphWidget.plot(hour, temperature, pen=pen, symbol='+', symbolSize=30, symbolBrush=('b'))
 
 
 app = QApplication(sys.argv)

@@ -19,10 +19,10 @@ class MainWindow(QMainWindow):
         temperature = [30,32,34,32,33,31,29,32,35,45]
 
         # Podemos cambiar el fondo, con muchas formas de definir el color
-        #self.graphWidget.setBackground('w')
-        #self.graphWidget.setBackground('#bbccaa')
-        #self.graphWidget.setBackground((100,50,255,25)) #RGBA
-        #self.graphWidget.setBackground(QtGui.QColor(100,50,254,25))
+        # self.graphWidget.setBackground('w')
+        # self.graphWidget.setBackground('#bbccaa')
+        # self.graphWidget.setBackground((100,50,255,25)) #RGBA
+        self.graphWidget.setBackground(QtGui.QColor(100,50,254,25))
 
         # Y los dibujamos (x,y)
         self.graphWidget.plot(hour, temperature)

@@ -28,16 +28,16 @@ class MainWindow(QMainWindow):
         self.graphWidget.setLabel('bottom', 'Hora (H)', **styles)
 
         # También admite sintaxis HTML
-        #self.graphWidget.setLabel('left', "<span style=\"color:red;font-size:20px\">Temperature (°C)</span>")
-        #self.graphWidget.setLabel('bottom', "<span style=\"color:red;font-size:20px\">Hour (H)</span>")
+        # self.graphWidget.setLabel('left', "<span style=\"color:red;font-size:20px\">Temperature (°C)</span>")
+        # self.graphWidget.setLabel('bottom', "<span style=\"color:red;font-size:20px\">Hour (H)</span>")
 
         pen = pg.mkPen(color=(255, 0, 0))
         
         self.graphWidget.plot(hour, temperature, pen=pen)
 
         # Y no debemos olvidarnos de las leyendas
-        #self.graphWidget.addLegend()
-        #self.graphWidget.plot(hour, temperature, name = "Sensor 1",  pen = pen, symbol='+', symbolSize=30, symbolBrush=('b'))
+        self.graphWidget.addLegend()
+        self.graphWidget.plot(hour, temperature, name = "Sensor 1",  pen = pen, symbol='+', symbolSize=30, symbolBrush=('b'))
 
 
 app = QApplication(sys.argv)

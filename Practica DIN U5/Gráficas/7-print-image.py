@@ -9,7 +9,7 @@ from pdfrw.toreportlab import makerl
 outfile = "result.pdf"
 
 # Guardamos en template la primera página del PDF que usamos de plantilla
-template = PdfReader("template.pdf", decompress=False).pages[0]
+template = PdfReader("template2.pdf", decompress=False).pages[0]
 # La convertimos en un Form XObject
 # Esto permite incluir de forma limpia un fragmento de un archivo PDF (en este caso, la página completa) en otro PDF
 template_obj = pagexobj(template)

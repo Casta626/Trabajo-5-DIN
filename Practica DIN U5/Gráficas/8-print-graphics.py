@@ -19,7 +19,7 @@ exporter.export('graphic.png')
 
 outfile = "result.pdf"
 
-template = PdfReader("template.pdf", decompress=False).pages[0]
+template = PdfReader("template2.pdf", decompress=False).pages[0]
 template_obj = pagexobj(template)
 canvas = Canvas(outfile)
 
