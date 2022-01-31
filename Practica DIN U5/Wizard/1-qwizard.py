@@ -20,9 +20,9 @@ class MainWindow(QMainWindow):
         self.wizard.setWizardStyle(QWizard.ModernStyle)
 
         # Se pueden ver los estilos en https://doc.qt.io/qtforpython/PySide6/QtWidgets/QWizard.html#PySide6.QtWidgets.PySide6.QtWidgets.QWizard.setWizardStyle
-        #self.wizard.setWizardStyle(QWizard.AeroStyle)
-        #self.wizard.setWizardStyle(QWizard.ClassicStyle)
-        #self.wizard.setWizardStyle(QWizard.MacStyle)
+                # self.wizard.setWizardStyle(QWizard.AeroStyle)
+        # self.wizard.setWizardStyle(QWizard.ClassicStyle)
+                # self.wizard.setWizardStyle(QWizard.MacStyle)
 
         # Podemos poner diferentes tipos de imágenes (dependiendo del estilo del QWizard)
         self.wizard.setPixmap(QWizard.WatermarkPixmap,QPixmap('Watermark.png'))
