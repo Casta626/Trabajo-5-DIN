@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QMessageBox, QPushButton, QLineEdit, QApplication, QFormLayout, QWidget, QTextEdit, QSpinBox
+from PySide6.QtWidgets import QComboBox, QMessageBox, QPushButton, QLineEdit, QApplication, QFormLayout, QWidget, QTextEdit, QSpinBox
 from reportlab.pdfgen.canvas import Canvas
 from pdfrw import PdfReader
 from pdfrw.buildxobj import pagexobj
@@ -15,14 +15,24 @@ class Window(QWidget):
 
         self.nombre = QLineEdit()
         self.apellidos = QLineEdit()
-        self.tipo_ordenador = QLineEdit()
-        self.marca = QLineEdit()
+        self.tipo_ordenador = QComboBox()
+        self.marca = QComboBox()
         self.precio = QLineEdit()
         self.n_perifericos = QSpinBox()
         self.n_perifericos.setRange(0, 1000)
         self.perifericos = QLineEdit()
         self.direccion = QLineEdit()
         self.comments = QTextEdit()
+
+        
+        self.tipo_ordenador.addItem("Sobremesa")
+        self.tipo_ordenador.addItem("Portátil")
+
+        self.marca.addItem("Asus")
+        self.marca.addItem("Acer")
+        self.marca.addItem("HP")
+        self.marca.addItem("Lenovo")
+        self.marca.addItem("MSI")
 
         self.generate_btn = QPushButton("Generar PDF")
 
@@ -50,12 +60,13 @@ class Window(QWidget):
         self.data = {
             'nombre': self.nombre.text(),
             'apellidos': self.apellidos.text(),
-            'tipo_ordenador': self.tipo_ordenador.text(),
-            'marca': self.marca.text(),
+            'tipo_ordenador': str(self.tipo_ordenador.currentText()),
+            'marca': str(self.marca.currentText()),
             'precio': self.precio.text(),
             'direccion': self.direccion.text(),
             'perifericos': self.perifericos.text(),
             'n_perifericos': str(self.n_perifericos.value()),
+            # 'prueba': str(self.prueba.currentText()),
             'comments': self.comments.toPlainText()
         }
         outfile = "result2.pdf"
@@ -95,7 +106,7 @@ class Window(QWidget):
 
         canvas.drawString(472, ystart-(3*32), "Python")
 
-       
+        # canvas.drawString(472, ystart-(2*32), self.data['prueba'])
 
         # Sería posible establecer un límite en el número de caracteres:
         # field.setMaxLength(25)
