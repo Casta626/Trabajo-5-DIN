@@ -15,7 +15,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QColumnView, QHBoxLayout,
+from PySide6.QtWidgets import (QApplication, QCheckBox, QTableView, QHBoxLayout,
     QLabel, QMainWindow, QMenuBar, QPushButton,
     QSizePolicy, QStatusBar, QTabWidget, QVBoxLayout,
     QWidget)
@@ -135,9 +135,9 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_3 = QWidget()
         self.tab_3.setObjectName(u"tab_3")
-        self.columnView = QColumnView(self.tab_3)
-        self.columnView.setObjectName(u"columnView")
-        self.columnView.setGeometry(QRect(-10, 0, 501, 431))
+        self.tableView = QTableView(self.tab_3)
+        self.tableView.setObjectName(u"tableView")
+        self.tableView.setGeometry(QRect(0, 0, 501, 431))
         self.tabWidget.addTab(self.tab_3, "")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
