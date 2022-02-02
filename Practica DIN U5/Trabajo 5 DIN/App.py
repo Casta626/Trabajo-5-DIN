@@ -1,6 +1,6 @@
 import sys
 from PySide6.QtGui import QPixmap
-from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QWizard, QWizardPage, QLineEdit, QHBoxLayout, QLabel
+from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QWizard, QWizardPage, QLineEdit, QHBoxLayout, QLabel, QComboBox
 from PySide6.QtWidgets import QApplication, QListWidget, QListWidgetItem, QMainWindow, QPushButton
 
 from ui_app import Ui_MainWindow
@@ -40,14 +40,21 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         self.setCentralWidget(self.wizard)
 
         page1 = QWizardPage()
-        page1.setTitle('Título de la página 1')
-        page1.setSubTitle('Subtítulo de la página 1')
+        page1.setTitle('Reparación')
+        page1.setSubTitle('Seleccione su tipo de ordenador y comente su problema brevemente')
         lineEdit = QLineEdit()
+        combopc = QComboBox()
         hLayout1 = QHBoxLayout(page1)
+        hLayout1.addWidget(combopc)
         hLayout1.addWidget(lineEdit)
+        
 
         page1.registerField('miCampo*', lineEdit,lineEdit.text(),'textChanged')
         self.wizard.addPage(page1)
+        
+
+        
+        
 
         page2 = QWizardPage()
         page2.setTitle('Título de la página 2')
@@ -72,7 +79,9 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         self.wizard.show()
 
     def atras(self):
-	    self.close()
+        app.closeAllWindows()
+        # self.close()
+	    # self.wizard.close()
 
 app = QApplication(sys.argv)
 window = MainWindow()

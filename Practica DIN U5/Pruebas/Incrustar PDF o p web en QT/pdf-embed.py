@@ -12,6 +12,7 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Mi aplicación")
 
+
         # QWebEngineView es una vista de una web (vista de un navegador incrustada en una app)
         # Documentación de la clase: https://doc.qt.io/qtforpython/PySide6/QtWebEngineWidgets/QWebEngineView.html
         self.web = QWebEngineView()
@@ -20,10 +21,12 @@ class MainWindow(QMainWindow):
         self.web.settings().setAttribute(QWebEngineSettings.PluginsEnabled, True)
 
         # Con Path guardamos la ruta relativa al documento
-        rutaConPDF = Path("template.pdf")
+        rutaConPDF = Path("template2.pdf")
+        
         # Cargamos el fichero con la ruta absoluta como uri
         # Usando http o https también se pueden cargar páginas web
         self.web.load(QUrl(rutaConPDF.absolute().as_uri()))
+        self.web.load(QUrl("https://github.com/"))
 
         self.setCentralWidget(self.web)
 
