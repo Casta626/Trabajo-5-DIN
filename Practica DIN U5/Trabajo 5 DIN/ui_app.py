@@ -15,21 +15,22 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QHBoxLayout, QLabel,
-    QMainWindow, QMenuBar, QPushButton, QSizePolicy,
-    QStatusBar, QTabWidget, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QColumnView, QHBoxLayout,
+    QLabel, QMainWindow, QMenuBar, QPushButton,
+    QSizePolicy, QStatusBar, QTabWidget, QVBoxLayout,
+    QWidget)
 import recursos
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(606, 565)
+        MainWindow.resize(489, 492)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
-        self.tabWidget.setGeometry(QRect(40, 10, 491, 451))
+        self.tabWidget.setGeometry(QRect(0, 0, 491, 451))
         self.tab = QWidget()
         self.tab.setObjectName(u"tab")
         self.verticalLayoutWidget_5 = QWidget(self.tab)
@@ -127,11 +128,21 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
         self.tab_2.setObjectName(u"tab_2")
+        self.pushButton2 = QPushButton(self.tab_2)
+        self.pushButton2.setObjectName(u"pushButton")
+        self.pushButton2.setGeometry(QRect(400, 200, 75, 24))
+        self.pushButton2.setStyleSheet(u"")
         self.tabWidget.addTab(self.tab_2, "")
+        self.tab_3 = QWidget()
+        self.tab_3.setObjectName(u"tab_3")
+        self.columnView = QColumnView(self.tab_3)
+        self.columnView.setObjectName(u"columnView")
+        self.columnView.setGeometry(QRect(-10, 0, 501, 431))
+        self.tabWidget.addTab(self.tab_3, "")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 606, 22))
+        self.menubar.setGeometry(QRect(0, 0, 489, 22))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -148,7 +159,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.labelGrafica.setText("")
-        self.checkBoxGrafica.setText(QCoreApplication.translate("MainWindow", u"RTX 3290 Titan 24GB", None))
+        self.checkBoxGrafica.setText(QCoreApplication.translate("MainWindow", u"RTX 3090 Titan 24GB", None))
         self.label_2.setText("")
         self.checkBoxFuenteAlimentacion.setText(QCoreApplication.translate("MainWindow", u"Fuente de Alimentaci\u00f3n 850 w", None))
         self.labelProcesador.setText("")
@@ -156,7 +167,9 @@ class Ui_MainWindow(object):
         self.labelCaja.setText("")
         self.checkBox_Caja.setText(QCoreApplication.translate("MainWindow", u"Caja Extended ATX ", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Aceptar", None))
+        self.pushButton2.setText(QCoreApplication.translate("MainWindow", u"Asistente", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Compra de PCs", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Reparaci\u00f3n", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Base de Datos", None))
     # retranslateUi
 

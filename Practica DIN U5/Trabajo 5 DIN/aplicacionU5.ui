@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>606</width>
-    <height>565</height>
+    <width>489</width>
+    <height>492</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,14 +17,14 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>10</y>
+      <x>0</x>
+      <y>0</y>
       <width>491</width>
       <height>451</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -66,7 +66,7 @@
            <item>
             <widget class="QCheckBox" name="checkBoxGrafica">
              <property name="text">
-              <string>RTX 3290 Titan 24GB</string>
+              <string>RTX 3090 Titan 24GB</string>
              </property>
             </widget>
            </item>
@@ -192,6 +192,21 @@
       <string>Reparación</string>
      </attribute>
     </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Base de Datos</string>
+     </attribute>
+     <widget class="QColumnView" name="columnView">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>0</y>
+        <width>501</width>
+        <height>431</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -199,7 +214,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>606</width>
+     <width>489</width>
      <height>22</height>
     </rect>
    </property>

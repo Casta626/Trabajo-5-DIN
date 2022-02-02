@@ -25,8 +25,8 @@ class MainWindow(QMainWindow):
                 # self.wizard.setWizardStyle(QWizard.MacStyle)
 
         # Podemos poner diferentes tipos de imágenes (dependiendo del estilo del QWizard)
-        self.wizard.setPixmap(QWizard.WatermarkPixmap,QPixmap('Watermark.png'))
-        self.wizard.setPixmap(QWizard.LogoPixmap,QPixmap('Logo.png'))
+        self.wizard.setPixmap(QWizard.WatermarkPixmap,QPixmap('Quieres_un_pc2.png'))
+        self.wizard.setPixmap(QWizard.LogoPixmap,QPixmap('CastaPC2.png'))
         self.wizard.setPixmap(QWizard.BannerPixmap,QPixmap('Banner.png'))
 
         # Un QWizard se compone de páginas QWizardPage con elementos: https://doc.qt.io/qtforpython/PySide6/QtWidgets/QWizard.html#elements-of-a-wizard-page
