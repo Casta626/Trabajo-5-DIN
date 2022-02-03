@@ -1,5 +1,3 @@
-create database if not exists CASTAPC;
-use CASTAPC;
 create table productos {
 id_producto varchar(3),
 producto varchar(50),
@@ -23,3 +21,4 @@ INSERT into productos values ("003", "AMD Ryzen 5 3600","Procesador",200.83,7);
 INSERT into productos values ("004", "Fuente de Alimentacion 850w","FA",110.13,23);
 
 INSERT into clientes values ("49615646T", "Jose Antonio","Castaneda","Pavon");
+INSERT into clientes values ("62664666P", "Pepe","Llejos","");
