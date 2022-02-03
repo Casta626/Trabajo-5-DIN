@@ -1,0 +1,12 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "castaserver",
+            "group": "casta",
+            "database": "${workspaceFolder:Trabajo 5 DIN}/chinook.sqlite"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
