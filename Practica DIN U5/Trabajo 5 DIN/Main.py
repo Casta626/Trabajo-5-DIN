@@ -53,43 +53,24 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         page1 = QWizardPage()
         page1.setTitle('Reparación')
         page1.setSubTitle('Seleccione su tipo de ordenador y comente su problema brevemente')
-        lineEditTipoPC = QLineEdit()
+        # lineEditTipoPC = QLineEdit()
         lineEditProblema = QLineEdit()
         labelProblema = QLabel()
-        labelProblema.setText("Problema")
+        labelProblema.setText("Problema:")
         labelTipoPC = QLabel()
-        labelTipoPC.setText("Tipo de PC")
-        # combopc = QComboBox()
-        # combopc.addItem("Sobremesa")
-        # combopc.addItem("Portátil")
+        labelTipoPC.setText("Tipo de PC:")
+        self.combopc = QComboBox()
+        self.combopc.addItem("Sobremesa")
+        self.combopc.addItem("Portátil")
         hLayoutP1 = QHBoxLayout(page1)
-        # hLayout1.addWidget(combopc)
         hLayoutP1.addWidget(labelTipoPC)
-        hLayoutP1.addWidget(lineEditTipoPC)
+        hLayoutP1.addWidget(self.combopc)
+        # hLayoutP1.addWidget(lineEditTipoPC)
         hLayoutP1.addWidget(labelProblema)
         hLayoutP1.addWidget(lineEditProblema)
         
-
-        page1.registerField('tipoPC*', lineEditTipoPC,lineEditTipoPC.text(),'textChanged')
         page1.registerField('problema*', lineEditProblema,lineEditProblema.text(),'textChanged')
-        # page1.registerField('tipoPC*', combopc,combopc.currentText(),'setText')
         self.wizard.addPage(page1)
-
-        # page1 = QWizardPage()
-        # page1.setTitle('Reparación')
-        # page1.setSubTitle('Seleccione su tipo de ordenador y comente su problema')
-        # textEdit = QTextEdit()
-        # combopc = QComboBox()
-        # combopc.addItem("Sobremesa")
-        # combopc.addItem("Portátil")
-        # hLayout1 = QHBoxLayout(page1)
-        # hLayout1.addWidget(combopc)
-        # hLayout1.addWidget(textEdit)
-        
-
-        # page1.registerField('miCampo*', textEdit,textEdit.toPlainText(),'textChanged')
-        # self.wizard.addPage(page1)
-
         
          
 
@@ -98,8 +79,8 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         page2.setSubTitle('¿Cree que necesitaria nuevas piezas?')
         label = QLabel()
         labelPiezas = QLabel()
-        labelPiezas.setText("¿Necesitaría nuevas piezas?")
-        lineEditPiezas = QLineEdit()
+        labelPiezas.setText("¿Creé que necesitaría nuevas piezas?")
+        
         
         self.comboPiezas = QComboBox()
         self.comboPiezas.addItem("No sé")
@@ -108,10 +89,10 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         vLayoutP2 = QVBoxLayout(page2)
         
         vLayoutP2.addWidget(label)
-        vLayoutP2.addWidget(lineEditPiezas)
+        vLayoutP2.addWidget(labelPiezas)
         vLayoutP2.addWidget(self.comboPiezas)
         
-        page2.registerField('piezas*', lineEditPiezas,lineEditPiezas.text(),'textChanged')
+        # page2.registerField('piezas*', lineEditPiezas,lineEditPiezas.text(),'textChanged')
 
         self.wizard.addPage(page2)
 
@@ -130,14 +111,14 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         labelDias.setText("Días laborales:")
         lineEditDias = QLineEdit()
         
-        # comboDias = QComboBox()
-        # comboDias.addItem("1 Día laboral")
-        # comboDias.addItem("3 Días laborales")
-        # comboDias.addItem("5 Días laborales")
+        self.comboDias = QComboBox()
+        self.comboDias.addItem("1 Día laboral")
+        self.comboDias.addItem("3 Días laborales")
+        self.comboDias.addItem("5 Días laborales")
         hLayoutP3 = QHBoxLayout(page3)
         hLayoutP3.addWidget(labelDias)
         hLayoutP3.addWidget(lineEditDias)
-        # hLayout3.addWidget(comboDias)
+        hLayoutP3.addWidget(self.comboDias)
 
         page3.registerField('dias*', lineEditDias,lineEditDias.text(),'textChanged')
 
@@ -205,7 +186,7 @@ class MainWindow(QMainWindow,Ui_MainWindow):
 
         self.wizard.addPage(page5)
 
-        next.clicked.connect(lambda:self.label1.setText(page5.field('tipoPC')))
+        # next.clicked.connect(lambda:self.label1.setText(page5.field('tipoPC')))
         next.clicked.connect(lambda:self.label2.setText(page5.field('problema')))
         next.clicked.connect(lambda:self.label3.setText(page5.field('piezas')))
         next.clicked.connect(lambda:self.label4.setText(page5.field('dias')))
