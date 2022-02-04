@@ -26,7 +26,7 @@ class MainWindow(QMainWindow):
         # Cargamos el fichero con la ruta absoluta como uri
         # Usando http o https también se pueden cargar páginas web
         self.web.load(QUrl(rutaConPDF.absolute().as_uri()))
-        self.web.load(QUrl("https://github.com/"))
+        # self.web.load(QUrl("https://github.com/"))
 
         self.setCentralWidget(self.web)
 
