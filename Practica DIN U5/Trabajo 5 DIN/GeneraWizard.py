@@ -1,3 +1,6 @@
+from Main import MainWindow
+from ui_main import Ui_MainWindow
+from Main import MainWindow
 import sys
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QWizard, QWizardPage, QLineEdit, QHBoxLayout, QLabel, QComboBox, QTextEdit, QVBoxLayout,QMessageBox, QAbstractItemView
@@ -11,19 +14,15 @@ import textwrap
 from datetime import datetime
 from PySide6.QtSql import QSqlDatabase, QSqlQuery, QSqlRelation, QSqlRelationalTableModel
 from PySide6.QtCore import Qt
-from DB import DB
 
-from ui_main import Ui_MainWindow
-class MainWindow(QMainWindow,Ui_MainWindow):
+class Wizard(MainWindow):
 
     def __init__(self):
         super().__init__()
         self.setupUi(self)
 
-        DB.db(self)
 
-        # Tocar checkBox, pillar una var con db y gráficas.
-
+    def generaWizar(self):
         self.wizard = QWizard()
         
 
@@ -271,14 +270,4 @@ class MainWindow(QMainWindow,Ui_MainWindow):
 
         canvas.save()
         QMessageBox.information(self,"Finalizado", "Se ha generado el PDF")
-
-    def atras(self):
-        # app.closeAllWindows()
-        self.close()
-	    # self.wizard.close()
-
-app = QApplication(sys.argv)
-window = MainWindow()
-window.setWindowTitle('Casta PC')
-window.show()
-app.exec()
+        self.wizard.show()
