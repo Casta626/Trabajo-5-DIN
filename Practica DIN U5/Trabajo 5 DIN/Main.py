@@ -1,3 +1,4 @@
+from pathlib import Path
 import sys
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QWizard, QWizardPage, QLineEdit, QHBoxLayout, QLabel, QComboBox, QTextEdit, QVBoxLayout,QMessageBox, QAbstractItemView
@@ -10,8 +11,11 @@ import textwrap
 # Para poner la fecha de hoy
 from datetime import datetime
 from PySide6.QtSql import QSqlDatabase, QSqlQuery, QSqlRelation, QSqlRelationalTableModel
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt,QUrl
 from DB import DB
+from Graficas import Graficas
+from PySide6.QtWebEngineCore import QWebEngineSettings
+
 
 from ui_main import Ui_MainWindow
 class MainWindow(QMainWindow,Ui_MainWindow):
@@ -20,7 +24,24 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
 
+        Graficas.generaImgGrafica(self)
+
+        
+
         DB.db(self)
+
+        DB.print(self)
+
+         # Para mostrar un PDF, es necesario habilitar los plugins. Los plugins están en https://doc.qt.io/qtforpython/PySide6/QtWebEngineCore/QWebEngineSettings.html#detailed-description
+        self.webEngineWeb.settings().setAttribute(QWebEngineSettings.PluginsEnabled, True)
+
+        # Con Path guardamos la ruta relativa al documento
+        rutaConPDF = Path("result.pdf")
+        
+        # Cargamos el fichero con la ruta absoluta como uri
+        # Usando http o https también se pueden cargar páginas web
+        self.webEngineWeb.load(QUrl(rutaConPDF.absolute().as_uri()))
+        # self.web.load(QUrl("https://github.com/"))
 
         # Tocar checkBox, pillar una var con db y gráficas.
 

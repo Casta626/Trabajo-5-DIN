@@ -6,7 +6,6 @@ class DB(Ui_MainWindow):
     
     def __init__(self):
         super().__init__()
-        self.setupUi(self)
 
     def db(self):
         db = QSqlDatabase("QSQLITE")
@@ -54,3 +53,14 @@ class DB(Ui_MainWindow):
 
         # Ponemos la fila inicial a un valor que indica que no está seleccionada ninguna fila
         self.fila = -1
+
+        self.query = QSqlQuery("SELECT stock FROM productos",db=db)
+        self.q1 = self.query.value(0) 
+        self.q2 = self.query.value(1) 
+        self.q3 = self.query.value(2)
+        self.q4 = self.query.value(3)
+
+    def print(self):
+        while self.query.next():
+                indice=self.query.value(0)
+                print(indice)

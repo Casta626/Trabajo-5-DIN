@@ -19,6 +19,8 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QTableView, QHBoxLayout,
     QLabel, QMainWindow, QMenuBar, QPushButton,
     QSizePolicy, QStatusBar, QTabWidget, QVBoxLayout,
     QWidget)
+
+from PySide6.QtWebEngineWidgets import QWebEngineView
 import recursos
 
 class Ui_MainWindow(object):
@@ -31,9 +33,9 @@ class Ui_MainWindow(object):
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
         self.tabWidget.setGeometry(QRect(0, 0, 491, 451))
-        self.tab = QWidget()
-        self.tab.setObjectName(u"tab")
-        self.verticalLayoutWidget_5 = QWidget(self.tab)
+        self.tabCompra = QWidget()
+        self.tabCompra.setObjectName(u"tabCompra")
+        self.verticalLayoutWidget_5 = QWidget(self.tabCompra)
         self.verticalLayoutWidget_5.setObjectName(u"verticalLayoutWidget_5")
         self.verticalLayoutWidget_5.setGeometry(QRect(0, 0, 395, 428))
         self.verticalLayout_6 = QVBoxLayout(self.verticalLayoutWidget_5)
@@ -121,24 +123,66 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_6.addLayout(self.horizontalLayout_2)
 
-        self.pushButton = QPushButton(self.tab)
+        self.pushButton = QPushButton(self.tabCompra)
         self.pushButton.setObjectName(u"pushButton")
         self.pushButton.setGeometry(QRect(400, 200, 75, 24))
         self.pushButton.setStyleSheet(u"")
-        self.tabWidget.addTab(self.tab, "")
-        self.tab_2 = QWidget()
-        self.tab_2.setObjectName(u"tab_2")
-        self.pushButton2 = QPushButton(self.tab_2)
+        self.tabWidget.addTab(self.tabCompra, "")
+
+        self.tabReparacion = QWidget()
+        self.tabReparacion.setObjectName(u"tabReparacion")
+        self.pushButton2 = QPushButton(self.tabReparacion)
         self.pushButton2.setObjectName(u"pushButton")
         self.pushButton2.setGeometry(QRect(400, 200, 75, 24))
         self.pushButton2.setStyleSheet(u"")
-        self.tabWidget.addTab(self.tab_2, "")
-        self.tab_3 = QWidget()
-        self.tab_3.setObjectName(u"tab_3")
-        self.tableView = QTableView(self.tab_3)
+        self.tabWidget.addTab(self.tabReparacion, "")
+
+        self.tabDB = QWidget()
+        self.tabDB.setObjectName(u"tabDB")
+        self.tableView = QTableView(self.tabDB)
         self.tableView.setObjectName(u"tableView")
         self.tableView.setGeometry(QRect(0, 0, 501, 431))
-        self.tabWidget.addTab(self.tab_3, "")
+        self.tabWidget.addTab(self.tabDB, "")
+
+        
+
+        self.tabInformes = QWidget()
+        self.tabInformes.setObjectName(u"tabInformes")
+
+        self.verticalLayoutWidget_Informes = QWidget(self.tabInformes)
+        self.verticalLayoutWidget_Informes.setObjectName(u"verticalLayoutWidget")
+        self.verticalLayoutWidget_Informes.setGeometry(QRect(0, 0, 430, 421))
+        self.verticalLayout_Informes = QVBoxLayout(self.verticalLayoutWidget_Informes)
+        self.verticalLayout_Informes.setObjectName(u"verticalLayout")
+        self.verticalLayout_Informes.setContentsMargins(0, 0, 0, 0)
+
+
+
+        self.webEngineWeb = QWebEngineView(self.tabInformes)
+        self.webEngineWeb.setObjectName(u"webEngineWeb")
+        # self.webEngineWeb.setGeometry(QRect(0, 0, 501, 431))
+
+        self.verticalLayout_Informes.addWidget(self.webEngineWeb)
+       
+        self.horizontalLayout_Informes = QHBoxLayout()
+        self.horizontalLayout_Informes.setObjectName(u"horizontalLayout")
+        self.botonInformeCompra = QPushButton(self.tabInformes)
+        self.botonInformeCompra.setObjectName(u"pushButton")
+        self.botonInformeCompra.setText("Informe de Compras")
+        # self.botonInformeCompra.setGeometry(QRect(0, 300, 160, 50))
+
+        self.horizontalLayout_Informes.addWidget(self.botonInformeCompra)
+
+        self.botonInformeReparacion = QPushButton(self.tabInformes)
+        self.botonInformeReparacion.setObjectName(u"pushButton")
+        self.botonInformeReparacion.setText("Informe de la Reparación")
+        # self.botonInformeReparacion.setGeometry(QRect(180, 300, 160, 50))
+
+        self.horizontalLayout_Informes.addWidget(self.botonInformeReparacion)
+
+        self.verticalLayout_Informes.addLayout(self.horizontalLayout_Informes)
+        
+        self.tabWidget.addTab(self.tabInformes, "")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
@@ -168,8 +212,9 @@ class Ui_MainWindow(object):
         self.checkBox_Caja.setText(QCoreApplication.translate("MainWindow", u"Caja Extended ATX ", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Aceptar", None))
         self.pushButton2.setText(QCoreApplication.translate("MainWindow", u"Asistente", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Compra de PCs", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"Reparaci\u00f3n", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Base de Datos", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabCompra), QCoreApplication.translate("MainWindow", u"Compra de PCs", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabReparacion), QCoreApplication.translate("MainWindow", u"Reparaci\u00f3n", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabDB), QCoreApplication.translate("MainWindow", u"Base de Datos", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabInformes), QCoreApplication.translate("MainWindow", u"Informes", None))
     # retranslateUi
 
