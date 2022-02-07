@@ -15,32 +15,68 @@ class Graficas(DB,Ui_MainWindow):
 
         # Poner lo común
 
-    def generaImgGrafica(self):
-        # Generamos gráfica simple
-        plt = pg.plot([1,5,2,4,7])
+    # def generaImgGrafica(self):
+    #     DB.lanzarDB(self)
+    #     if self.query.next():
+    #             self.indice=self.query.value(0)
+    #             # self.valores[] = self.query.value(0)
+    #             print(self.indice)
+    #     if self.query.next():
+    #             self.indice2=self.query.value(0)
+    #             # self.valores[] = self.query.value(0)
+    #             print(self.indice2)
+    #     if self.query.next():
+    #             self.indice3=self.query.value(0)
+    #             # self.valores[] = self.query.value(0)
+    #             print(self.indice3)
+    #     if self.query.next():
+    #             self.indice4=self.query.value(0)
+    #             # self.valores[] = self.query.value(0)
+    #             print(self.indice4)
+    #     else:
+    #             print("No queda bro")
 
-        # Creamos una instancia de exportación con el ítem que queremos exportar
-        exporter = pg.exporters.ImageExporter(plt.plotItem)
+    #     # Generamos gráfica simple
+    #     self.valores = [self.indice,self.indice2,self.indice3,self.indice4]
+    #     self.plt = pg.plot(self.valores)
 
-        # Establecemos los parámetros de la exportación (anchura)
-        exporter.parameters()['width'] = 100    # (afecta a la altura de forma proporcional)
+    #     self.plt.setBackground('w')
 
-        # Elegimos el nombre del archivo en el que exportamos la gráfica como imagen
-        exporter.export('graphic.png')
+    #     self.plt.setTitle("Stock", color="b", size="30pt")
 
-        outfile = "result.pdf"
+    #     styles = {'color':'r', 'font-size':'20px'}
+    #     self.plt.setLabel('left', 'Stock de Productos', **styles)
+    #     self.plt.setLabel('bottom', 'Diferentes Productos', **styles)
 
-        template = PdfReader("template2.pdf", decompress=False).pages[0]
-        template_obj = pagexobj(template)
-        canvas = Canvas(outfile)
+    #     pen = pg.mkPen(color=(255, 0, 0))
 
-        xobj_name = makerl(canvas, template_obj)
-        canvas.doForm(xobj_name)
+    #     self.plt.plot(self.valores,pen=pen)
 
-        ystart = 650
-        canvas.drawImage("graphic.png", 50, ystart, width=None,height=None,mask=None)
+    #     # Mostramos un grid en el fondo
+    #     self.plt.showGrid(x=True, y=True)
 
-        canvas.save()
+    #     # Creamos una instancia de exportación con el ítem que queremos exportar
+    #     self.exporter = pg.exporters.ImageExporter(self.plt.plotItem)
+
+    #     # Establecemos los parámetros de la exportación (anchura)
+    #     self.exporter.parameters()['width'] = 100    # (afecta a la altura de forma proporcional)
+
+    #     # Elegimos el nombre del archivo en el que exportamos la gráfica como imagen
+    #     self.exporter.export('graphic.png')
+
+    #     self.outfile = "result.pdf"
+
+    #     self.template = PdfReader("template.pdf", decompress=False).pages[0]
+    #     self.template_obj = pagexobj(self.template)
+    #     self.canvas = Canvas(self.outfile)
+
+    #     self.xobj_name = makerl(self.canvas, self.template_obj)
+    #     self.canvas.doForm(self.xobj_name)
+
+    #     ystart = 650
+    #     self.canvas.drawImage("graphic.png", 50, ystart, width=None,height=None,mask=None)
+
+    #     self.canvas.save()
 
     def generaGrafica(self):
         # Nombre del PDF resultante

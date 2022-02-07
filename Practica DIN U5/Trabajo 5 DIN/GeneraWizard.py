@@ -15,14 +15,13 @@ from datetime import datetime
 from PySide6.QtSql import QSqlDatabase, QSqlQuery, QSqlRelation, QSqlRelationalTableModel
 from PySide6.QtCore import Qt
 
-class Wizard(MainWindow):
+class GenWizard(MainWindow):
 
     def __init__(self):
         super().__init__()
         self.setupUi(self)
 
 
-    def generaWizar(self):
         self.wizard = QWizard()
         
 
@@ -270,4 +269,8 @@ class Wizard(MainWindow):
 
         canvas.save()
         QMessageBox.information(self,"Finalizado", "Se ha generado el PDF")
-        self.wizard.show()
+
+    def atras(self):
+        # app.closeAllWindows()
+        self.close()
+	    # self.wizard.close()

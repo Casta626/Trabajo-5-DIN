@@ -24,13 +24,13 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
 
-        Graficas.generaImgGrafica(self)
-
         
 
-        DB.db(self)
+        DB.lanzarDB(self)
 
-        DB.print(self)
+        DB.generaImgGrafica(self)
+
+        
 
          # Para mostrar un PDF, es necesario habilitar los plugins. Los plugins están en https://doc.qt.io/qtforpython/PySide6/QtWebEngineCore/QWebEngineSettings.html#detailed-description
         self.webEngineWeb.settings().setAttribute(QWebEngineSettings.PluginsEnabled, True)
@@ -43,7 +43,133 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         self.webEngineWeb.load(QUrl(rutaConPDF.absolute().as_uri()))
         # self.web.load(QUrl("https://github.com/"))
 
-        # Tocar checkBox, pillar una var con db y gráficas.
+        # Tocar checkBox con el nuevo asistente, modificar visulamente este, hacerle su pdf
+        # y tocar la base de datps para tenerla como David
+
+
+#################################    Wizard de Compra   #########################################
+        self.wizardCompra = QWizard()
+        
+
+        self.wizardCompra.setWizardStyle(QWizard.ModernStyle)
+
+        self.wizardCompra.setPixmap(QWizard.WatermarkPixmap,QPixmap('marcadeagua.png'))
+        self.wizardCompra.setPixmap(QWizard.LogoPixmap,QPixmap('icono.png'))
+        # self.wizardCompra.setPixmap(QWizard.BannerPixmap,QPixmap('CastaSoftIndustries.png'))
+
+        self.pagina1 = QWizardPage()
+        self.pagina1.setTitle('Compras')
+        self.pagina1.setSubTitle('Una vez seleccionado lo articulos rellene los siguientes campos:')
+       
+        self.labelNombre = QLabel()
+        self.labelNombre.setText("Nombre: ")
+        self.lineEditNombre = QLineEdit()
+        self.labelApellido1 = QLabel()
+        self.labelApellido1.setText("Primer Apellido: ")
+        self.lineEditApellido1 = QLineEdit()
+        self.labelApellido2 = QLabel()
+        self.labelApellido2.setText("Segundo Apellido: ")
+        self.lineEditApellido2 = QLineEdit()
+        self.labelCorreo = QLabel()
+        self.labelCorreo.setText("Correo electrónico: ")
+        self.lineEditCorreo = QLineEdit()
+        self.labelEdad = QLabel()
+        self.labelEdad.setText("Edad: ")
+        self.lineEditEdad = QLineEdit()
+
+        self.vLayoutCompra = QVBoxLayout(self.pagina1)
+        hLayoutCompra = QHBoxLayout()
+        hLayoutCompra2 = QHBoxLayout()
+        hLayoutCompra.addWidget(self.labelNombre)
+        hLayoutCompra.addWidget(self.lineEditNombre)
+        hLayoutCompra.addWidget(self.labelApellido1)
+        hLayoutCompra.addWidget(self.lineEditApellido1)
+        hLayoutCompra.addWidget(self.labelApellido2)
+        hLayoutCompra.addWidget(self.lineEditApellido2)
+        hLayoutCompra.addWidget(self.labelCorreo)
+        hLayoutCompra.addWidget(self.lineEditCorreo) 
+        hLayoutCompra.addWidget(self.labelEdad)
+        hLayoutCompra2.addWidget(self.lineEditEdad)
+        self.vLayoutCompra.addLayout(hLayoutCompra)
+        self.vLayoutCompra.addLayout(hLayoutCompra2)
+
+        self.pushButton.clicked.connect(self.iniciarWizardCompra)
+        
+
+        self.wizardCompra.addPage(self.pagina1)
+
+
+        # labelT1 = QLabel()
+        # labelT1.setText("Tipo de PC: ")
+        # self.label1 = QLabel()
+        # self.label1.setText(self.combopc.currentText())
+        # labelT2 = QLabel()
+        # labelT2.setText("Problema: ")
+        # self.label2 = QLabel()
+        # self.label2.setText(self.lineEditProblema.text())
+        # labelT3 = QLabel()
+        # labelT3.setText("Piezas nuevas: ")
+        # self.label3 = QLabel()
+        # self.label3.setText(self.comboPiezas.currentText())
+        # labelT4 = QLabel()
+        # labelT4.setText("Rapidez: ")
+        # self.label4 = QLabel()
+        # self.label4.setText(self.comboDias.currentText())
+        # labelT5 = QLabel()
+        # labelT5.setText("Comentarios: ")
+        # self.label5 = QLabel()
+        # self.label5.setText(self.textEditComentarios.toPlainText())
+
+        # vLayoutP5 = QVBoxLayout(page5)
+        # hLayoutP5 = QHBoxLayout()
+        # hLayout2P5 = QHBoxLayout()
+        # hLayoutP5.addWidget(labelT1)
+        # hLayoutP5.addWidget(self.label1)
+        # hLayoutP5.addWidget(labelT2)
+        # hLayoutP5.addWidget(self.label2)
+        # hLayoutP5.addWidget(labelT3)
+        # hLayoutP5.addWidget(self.label3)
+        # hLayoutP5.addWidget(labelT4)
+        # hLayoutP5.addWidget(self.label4) 
+        # hLayoutP5.addWidget(labelT5)
+        # hLayout2P5.addWidget(self.label5)
+        # vLayoutP5.addLayout(hLayoutP5)
+        # vLayoutP5.addLayout(hLayout2P5)
+
+        # self.pushButton.clicked.connect(self.iniciarWizardCompra)
+        
+
+        # self.wizardCompra.addPage(self.pagina1)
+
+
+
+################################   Wizard de Reparación    ######################################
+
+        # page1 = QWizardPage()
+        # page1.setTitle('Reparación')
+        # page1.setSubTitle('Seleccione su tipo de ordenador y comente su problema brevemente')
+        # # lineEditTipoPC = QLineEdit()
+        # self.lineEditProblema = QLineEdit()
+        # labelProblema = QLabel()
+        # labelProblema.setText("Problema:")
+        # labelTipoPC = QLabel()
+        # labelTipoPC.setText("Tipo de PC:")
+        # self.combopc = QComboBox()
+        # self.combopc.addItem("Sobremesa")
+        # self.combopc.addItem("Portátil")
+        # hLayoutP1 = QHBoxLayout(page1)
+        # hLayoutP1.addWidget(labelTipoPC)
+        # hLayoutP1.addWidget(self.combopc)
+        # # hLayoutP1.addWidget(lineEditTipoPC)
+        # hLayoutP1.addWidget(labelProblema)
+        # hLayoutP1.addWidget(self.lineEditProblema)
+        
+        # page1.registerField('problema*', self.lineEditProblema,self.lineEditProblema.text(),'textChanged')
+        # self.wizard.addPage(page1)
+
+
+
+
 
         self.wizard = QWizard()
         
@@ -52,7 +178,7 @@ class MainWindow(QMainWindow,Ui_MainWindow):
 
         self.wizard.setPixmap(QWizard.WatermarkPixmap,QPixmap('marcadeagua.png'))
         self.wizard.setPixmap(QWizard.LogoPixmap,QPixmap('icono.png'))
-        self.wizard.setPixmap(QWizard.BannerPixmap,QPixmap('Banner.png'))
+        # self.wizard.setPixmap(QWizard.BannerPixmap,QPixmap('CastaSoftIndustries.png'))
 
         # self.setCentralWidget(self.wizard)
 
@@ -207,7 +333,7 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         # finish.clicked.connect(lambda:label.setText("Según su problema: "+page1.field('problema')))
 
 
-        self.pushButton2.clicked.connect(self.iniciarWizard)
+        self.pushButton2.clicked.connect(self.iniciarWizardReparacion)
 
         next.clicked.connect(self.actualizarDatosWizard)
 
@@ -221,13 +347,16 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         self.label4.setText(str(self.comboDias.currentText()))
         self.label5.setText(str(self.textEditComentarios.toPlainText()))
 
-    def iniciarWizard(self):
+    def iniciarWizardReparacion(self):
         self.wizard.show()
+
+    def iniciarWizardCompra(self):
+        self.wizardCompra.show()
 
 
     def generaPDFwizard(self):
     
-        outfile = "result.pdf"
+        outfile = "ReparacionWizard.pdf"
 
         template = PdfReader("template.pdf", decompress=False).pages[0]
         template_obj = pagexobj(template)
