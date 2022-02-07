@@ -105,25 +105,25 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         labelT1 = QLabel()
         labelT1.setText("Tipo de PC: ")
         self.label1 = QLabel()
-        self.label1.setText(self.combopc.currentText())
+        # self.label1.setText(self.combopc.currentText())
         labelT2 = QLabel()
         labelT2.setText("Problema: ")
         self.label2 = QLabel()
-        self.label2.setText(self.lineEditProblema.text())
+        # self.label2.setText(self.lineEditProblema.text())
         labelT3 = QLabel()
         labelT3.setText("Piezas nuevas: ")
         self.label3 = QLabel()
-        self.label3.setText(self.comboPiezas.currentText())
+        # self.label3.setText(self.comboPiezas.currentText())
         labelT4 = QLabel()
         labelT4.setText("Rapidez: ")
         self.label4 = QLabel()
-        self.label4.setText(self.comboDias.currentText())
+        # self.label4.setText(self.comboDias.currentText())
         labelT5 = QLabel()
         labelT5.setText("Comentarios: ")
         self.label5 = QLabel()
-        self.label5.setText(self.textEditComentarios.toPlainText())
+        # self.label5.setText(self.textEditComentarios.toPlainText())
 
-        vLayoutP5 = QVBoxLayout(page5)
+        vLayoutP5 = QVBoxLayout(self.pagina2)
         hLayoutP5 = QHBoxLayout()
         hLayout2P5 = QHBoxLayout()
         hLayoutP5.addWidget(labelT1)
@@ -140,7 +140,7 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         vLayoutP5.addLayout(hLayout2P5)
         
 
-        self.wizardCompra.addPage(self.pagina1)
+        self.wizardCompra.addPage(self.pagina2)
 
 
 
