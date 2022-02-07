@@ -98,9 +98,20 @@ class MainWindow(QMainWindow,Ui_MainWindow):
 
         self.wizardCompra.addPage(self.pagina1)
 
+
         self.pagina2 = QWizardPage()
-        self.pagina2.setTitle('Compras')
-        self.pagina2.setSubTitle('Una vez seleccionado lo articulos rellene los siguientes campos:')
+        self.pagina2.setTitle('Resumen')
+        self.pagina2.setSubTitle('Confirme que estos datos son correctos, para imprimirlos pulse finish')
+
+
+
+
+
+
+
+        self.pagina3 = QWizardPage()
+        self.pagina3.setTitle('Resumen')
+        self.pagina3.setSubTitle('Confirme que estos datos son correctos, para imprimirlos pulse finish')
 
         labelT1 = QLabel()
         labelT1.setText("Tipo de PC: ")
@@ -123,7 +134,7 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         self.label5 = QLabel()
         # self.label5.setText(self.textEditComentarios.toPlainText())
 
-        vLayoutP5 = QVBoxLayout(self.pagina2)
+        vLayoutP5 = QVBoxLayout(self.pagina3)
         hLayoutP5 = QHBoxLayout()
         hLayout2P5 = QHBoxLayout()
         hLayoutP5.addWidget(labelT1)
@@ -140,7 +151,9 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         vLayoutP5.addLayout(hLayout2P5)
         
 
-        self.wizardCompra.addPage(self.pagina2)
+        self.wizardCompra.addPage(self.pagina3)
+
+        self.pagina3.setFinalPage(True)
 
 
 
