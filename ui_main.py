@@ -29,6 +29,13 @@ class Ui_MainWindow(object):
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(489, 492)
         self.centralwidget = QWidget(MainWindow)
+
+        # self.contenedor = QWidget()
+        # self.layout = QVBoxLayout()
+        # self.layout.addWidget(self.tabWidget)
+        # self.layout.layout
+
+
         self.centralwidget.setObjectName(u"centralwidget")
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")

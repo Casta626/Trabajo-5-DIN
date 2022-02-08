@@ -157,7 +157,7 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         vLayoutP5 = QVBoxLayout(self.pagina3)
         hLayoutP5 = QHBoxLayout()
         hLayout2P5 = QHBoxLayout()
-        hLayoutP5.addWidget(labelT1)
+        # hLayoutP5.addWidget(labelT1)
         hLayoutP5.addWidget(self.label1)
         hLayoutP5.addWidget(labelT2)
         hLayoutP5.addWidget(self.label2)
