@@ -100,13 +100,32 @@ class MainWindow(QMainWindow,Ui_MainWindow):
 
 
         self.pagina2 = QWizardPage()
-        self.pagina2.setTitle('Resumen')
-        self.pagina2.setSubTitle('Confirme que estos datos son correctos, para imprimirlos pulse finish')
+        self.pagina2.setTitle('Forma de pago')
+        self.pagina2.setSubTitle('Introduzca su tarjeta de débito o crédito')
 
+        self.labelTarjeta = QLabel()
+        self.labelTarjeta.setText("Número de la tarjeta:")
+        self.lineEditTarjeta = QLineEdit()
+        self.labelfechaCaducidadTarjeta = QLabel()
+        self.labelfechaCaducidadTarjeta.setText("Fecha caduca:")
+        self.lineEditfechaCaducidadTarjeta = QLineEdit()
+        self.labelCVV = QLabel()
+        self.labelCVV.setText("CVV:")
+        self.lineEditCVV = QLineEdit()
 
+        self.hLayoutPago1 = QHBoxLayout()
+        self.hLayoutPago1.addWidget(self.labelTarjeta)
+        self.hLayoutPago1.addWidget(self.lineEditTarjeta)
+        self.hLayoutPago2 = QHBoxLayout()
+        self.hLayoutPago2.addWidget(self.labelfechaCaducidadTarjeta)
+        self.hLayoutPago2.addWidget(self.lineEditfechaCaducidadTarjeta)
+        self.hLayoutPago2.addWidget(self.labelCVV)
+        self.hLayoutPago2.addWidget(self.lineEditCVV)
+        self.vLayoutPago1 = QVBoxLayout(self.pagina2)
+        self.vLayoutPago1.addLayout(self.hLayoutPago1)
+        self.vLayoutPago1.addLayout(self.hLayoutPago2)
 
-
-
+        self.wizardCompra.addPage(self.pagina2)
 
 
         self.pagina3 = QWizardPage()
@@ -247,7 +266,9 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         
         # cancel = self.wizard.button(QWizard.CancelButton)
         # Y cuando se pulsa, se conecta con una función para poner lo que ha escrito el usuario en el label de la página 2
+
         next.clicked.connect(lambda:label.setText("Según su problema: "+page1.field('problema')))
+        
         # cancel.clicked.connect(self.atras)
 
         page3 = QWizardPage()
