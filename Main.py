@@ -132,8 +132,9 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         self.pagina3.setTitle('Resumen')
         self.pagina3.setSubTitle('Confirme que estos datos son correctos, para imprimirlos pulse finish')
 
-        labelT1 = QLabel()
-        labelT1.setText("Tipo de PC: ")
+        # self.labelNombre En vez de crear nuevos objetos puedo literalmente llamar los que ya tengo
+        # Quitar las pruebas y colocar bien todo 
+
         self.label1 = QLabel()
         # self.label1.setText(self.combopc.currentText())
         labelT2 = QLabel()
