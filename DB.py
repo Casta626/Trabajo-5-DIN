@@ -1,6 +1,6 @@
 from PySide6.QtSql import QSqlDatabase, QSqlQuery, QSqlRelation, QSqlRelationalTableModel
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QAbstractItemView
+from PySide6.QtWidgets import QAbstractItemView,QLineEdit,QComboBox
 
 from reportlab.pdfgen.canvas import Canvas
 from pdfrw import PdfReader
@@ -18,12 +18,16 @@ class DB(Ui_MainWindow):
         self.db = QSqlDatabase("QSQLITE")
         self.db.setDatabaseName("DB.sqlite")
 
+        self.lineEditID = QLineEdit()
+        self.lineEditProducto = QLineEdit()
+        self.comboDescripcion = QComboBox()
+
         self.db.open()
         # Creamos una query para obtener todos los artistas de la tabla Artist
-        # query = QSqlQuery("SELECT Name FROM Artist",db=db)
+        query = QSqlQuery("SELECT descripicion FROM productos",db=self.db)
         # Recorremos el resultado de esa query agregando al comboBox el listado de artistas
-        # while query.next():
-        #     self.comboBox_Artist.addItem(query.value(0))
+        while query.next():
+            self.comboDescripcion.addItem(query.value(0))
 
         # Creamos un modelo relacional de SQL
         self.modelo = QSqlRelationalTableModel(db=self.db)

@@ -50,7 +50,6 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
         self.lineEditProducto = QLineEdit()
         self.comboDescripcion = QComboBox()
 
-        
 
         DB.lanzarDB(self)
 
