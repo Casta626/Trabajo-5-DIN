@@ -46,6 +46,10 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
 
+        self.lineEditID = QLineEdit()
+        self.lineEditProducto = QLineEdit()
+        self.comboDescripcion = QComboBox()
+
         
 
         DB.lanzarDB(self)

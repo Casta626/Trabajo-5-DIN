@@ -61,7 +61,7 @@ class DB(Ui_MainWindow):
         # Ponemos la fila inicial a un valor que indica que no está seleccionada ninguna fila
         self.fila = -1
 
-########################        Datos para la los Productos     #################################
+###########################        Datos para la los Productos       #####################################
 
         self.queryCaja = QSqlQuery("SELECT id_producto FROM productos WHERE productos.descripcion='Caja'",db=self.db)
 
