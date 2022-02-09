@@ -61,7 +61,7 @@ class DB(Ui_MainWindow):
         # Ponemos la fila inicial a un valor que indica que no está seleccionada ninguna fila
         self.fila = -1
 
-        self.query = QSqlQuery("SELECT stock FROM productos",db=self.db)
+########################        Datos para la los Productos     #################################
 
         self.queryCaja = QSqlQuery("SELECT id_producto FROM productos WHERE productos.descripcion='Caja'",db=self.db)
 
@@ -86,6 +86,39 @@ class DB(Ui_MainWindow):
         while self.queryFA.next():
                 self.idFA=str(self.queryFA.value(0))
                 print(self.idFA)
+
+
+
+
+        
+        self.queryCajaPrecio = QSqlQuery("SELECT precio FROM productos WHERE productos.precio=120.43",db=self.db)
+
+        while self.queryCajaPrecio.next():
+                self.idCajaPrecio=self.queryCajaPrecio.value(0)
+                print(self.idCajaPrecio)
+
+
+        self.queryGraficaPrecio = QSqlQuery("SELECT precio FROM productos WHERE productos.precio=999.99",db=self.db)
+
+        while self.queryGraficaPrecio.next():
+                self.idGraficaPrecio=self.queryGraficaPrecio.value(0)
+                print(self.idGraficaPrecio)
+
+        self.queryProcesadorPrecio = QSqlQuery("SELECT precio FROM productos WHERE productos.precio=200.83",db=self.db)
+
+        while self.queryProcesadorPrecio.next():
+                self.idProcesadorPrecio=self.queryProcesadorPrecio.value(0)
+                print(self.idProcesadorPrecio)
+
+        self.queryFAPrecio = QSqlQuery("SELECT precio FROM productos WHERE productos.precio=110.13",db=self.db)
+
+        while self.queryFAPrecio.next():
+                self.idFAPrecio=self.queryFAPrecio.value(0)
+                print(self.idFAPrecio)
+
+#########################       Valores para la imagen de la grafica    ##############################################
+
+        self.query = QSqlQuery("SELECT stock FROM productos",db=self.db)
 
     def print(self):
         while self.query.next():

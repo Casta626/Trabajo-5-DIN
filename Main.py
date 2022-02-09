@@ -21,15 +21,26 @@ from ui_main import Ui_MainWindow
 class MainWindow(DB,QMainWindow,Ui_MainWindow):
 
     def contadorProductos(self):
+        self.precioTotal = 0
         self.datosCheckBox = ""
-        if self.checkBox_Caja.isCheckable:
+        if self.checkBox_Caja.isChecked():
             self.datosCheckBox += self.idCaja+" "
-        if self.checkBoxGrafica.isCheckable:
-            self.datosCheckBox += self.idGrafica
-        if self.checkBoxProcesador.isCheckable:
-            self.datosCheckBox += self.idProcesador
-        if self.checkBoxFuenteAlimentacion.isCheckable:
+            self.precioTotal += self.idCajaPrecio
+
+        if self.checkBoxGrafica.isChecked():
+            self.datosCheckBox += self.idGrafica+" "
+            self.precioTotal += self.idGraficaPrecio
+
+        if self.checkBoxProcesador.isChecked():
+            self.datosCheckBox += self.idProcesador+" "
+            self.precioTotal += self.idProcesadorPrecio
+
+        if self.checkBoxFuenteAlimentacion.isChecked():
             self.datosCheckBox += self.idFA
+            self.precioTotal += self.idFAPrecio
+
+        print(self.datosCheckBox)
+        print(self.precioTotal)
 
     def __init__(self):
         super().__init__()
@@ -45,6 +56,8 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
 
         self.botonInformeCompra.clicked.connect(self.mostrarCompraPDF)
         self.botonInformeReparacion.clicked.connect(self.mostrarReparacionPDF)
+
+        self.pushButton.clicked.connect(self.contadorProductos)
 
     
             # https://www.youtube.com/watch?v=vJlQ1pfETIo
