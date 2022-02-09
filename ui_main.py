@@ -190,7 +190,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_Informes.addLayout(self.horizontalLayout_Informes)
         
         self.tabWidget.addTab(self.tabInformes, "")
-        MainWindow.setCentralWidget(self.centralwidget)
+        MainWindow.setCentralWidget(self.tabWidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
         self.menubar.setGeometry(QRect(0, 0, 489, 22))

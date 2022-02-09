@@ -42,6 +42,7 @@ class Ui_MainWindow(object):
         icon2 = QIcon()
         icon2.addFile(u":/icons/database--minus.png", QSize(), QIcon.Normal, QIcon.Off)
         self.actionEliminar.setIcon(icon2)
+        
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_2 = QVBoxLayout(self.centralwidget)

@@ -30,20 +30,22 @@ class MainWindow(QMainWindow,Ui_MainWindow):
 
         DB.generaImgGrafica(self)
 
+        self.mostrarCompraPDF()
+
+        self.botonInformeCompra.clicked.connect(self.mostrarCompraPDF)
+        self.botonInformeReparacion.clicked.connect(self.mostrarReparacionPDF)
+
+        self.datosCheckBox = str
+
+        if self.checkBox_Caja.isCheckable:
+            ...
+            # https://www.youtube.com/watch?v=vJlQ1pfETIo
+
+
         
+    
 
-         # Para mostrar un PDF, es necesario habilitar los plugins. Los plugins están en https://doc.qt.io/qtforpython/PySide6/QtWebEngineCore/QWebEngineSettings.html#detailed-description
-        self.webEngineWeb.settings().setAttribute(QWebEngineSettings.PluginsEnabled, True)
-
-        # Con Path guardamos la ruta relativa al documento
-        rutaConPDF = Path("result.pdf")
-        
-        # Cargamos el fichero con la ruta absoluta como uri
-        # Usando http o https también se pueden cargar páginas web
-        self.webEngineWeb.load(QUrl(rutaConPDF.absolute().as_uri()))
-        # self.web.load(QUrl("https://github.com/"))
-
-        # Tocar checkBox con el nuevo asistente, modificar visulamente este, hacerle su pdf
+        # Tocar checkBox para igualarlo a sus correspondientes en la base de datos
         # y tocar la base de datos para tenerla como David
 
 
@@ -56,6 +58,15 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         self.wizardCompra.setPixmap(QWizard.WatermarkPixmap,QPixmap('marcadeagua.png'))
         self.wizardCompra.setPixmap(QWizard.LogoPixmap,QPixmap('icono.png'))
         # self.wizardCompra.setPixmap(QWizard.BannerPixmap,QPixmap('CastaSoftIndustries.png'))
+
+
+        nextWC = self.wizardCompra.button(QWizard.NextButton)
+        nextWC.clicked.connect(self.actualizarDatosWizardCompra)
+
+        finishWC = self.wizardCompra.button(QWizard.FinishButton)
+
+        finishWC.clicked.connect(self.generaPDFwizardCompra)
+
 
         self.pagina1 = QWizardPage()
         self.pagina1.setTitle('Compras')
@@ -132,43 +143,108 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         self.pagina3.setTitle('Resumen')
         self.pagina3.setSubTitle('Confirme que estos datos son correctos, para imprimirlos pulse finish')
 
-        # self.labelNombre En vez de crear nuevos objetos puedo literalmente llamar los que ya tengo
-        # Quitar las pruebas y colocar bien todo 
+        self.nombre = QLabel()
+        self.nombre.setText("Nombre: ")
+        self.labelGetNombre = QLabel()
+        self.labelGetNombre.setText(str(self.lineEditNombre.text()))
+        
+        self.apellido1 = QLabel()
+        self.apellido1.setText("Apellido 1: ")
+        self.labelGetApellido1 = QLabel()
+        self.labelGetApellido1.setText(str(self.lineEditApellido1.text()))
 
-        self.label1 = QLabel()
-        # self.label1.setText(self.combopc.currentText())
-        labelT2 = QLabel()
-        labelT2.setText("Problema: ")
-        self.label2 = QLabel()
-        # self.label2.setText(self.lineEditProblema.text())
-        labelT3 = QLabel()
-        labelT3.setText("Piezas nuevas: ")
-        self.label3 = QLabel()
-        # self.label3.setText(self.comboPiezas.currentText())
-        labelT4 = QLabel()
-        labelT4.setText("Rapidez: ")
-        self.label4 = QLabel()
-        # self.label4.setText(self.comboDias.currentText())
-        labelT5 = QLabel()
-        labelT5.setText("Comentarios: ")
-        self.label5 = QLabel()
-        # self.label5.setText(self.textEditComentarios.toPlainText())
+        self.apellido2 = QLabel()
+        self.apellido2.setText("Apellido 2: ")
+        self.labelGetApellido2 = QLabel()
+        self.labelGetApellido2.setText(str(self.lineEditApellido2.text()))
 
-        vLayoutP5 = QVBoxLayout(self.pagina3)
-        hLayoutP5 = QHBoxLayout()
-        hLayout2P5 = QHBoxLayout()
-        # hLayoutP5.addWidget(labelT1)
-        hLayoutP5.addWidget(self.label1)
-        hLayoutP5.addWidget(labelT2)
-        hLayoutP5.addWidget(self.label2)
-        hLayoutP5.addWidget(labelT3)
-        hLayoutP5.addWidget(self.label3)
-        hLayoutP5.addWidget(labelT4)
-        hLayoutP5.addWidget(self.label4) 
-        hLayoutP5.addWidget(labelT5)
-        hLayout2P5.addWidget(self.label5)
-        vLayoutP5.addLayout(hLayoutP5)
-        vLayoutP5.addLayout(hLayout2P5)
+        self.correo = QLabel()
+        self.correo.setText("Correo: ")
+        self.labelGetCorreo = QLabel()
+        self.labelGetCorreo.setText(str(self.lineEditCorreo.text()))
+
+        self.edad = QLabel()
+        self.edad.setText("Edad: ")
+        self.labelGetEdad = QLabel()
+        self.labelGetEdad.setText(str(self.lineEditEdad.text()))
+
+        self.tarjeta = QLabel()
+        self.tarjeta.setText("Tarjeta: ")
+        self.labelGetTarjeta = QLabel()
+        self.labelGetTarjeta.setText(str(self.lineEditTarjeta.text()))
+
+        self.fechaCaducidadTarjeta = QLabel()
+        self.fechaCaducidadTarjeta.setText("Fecha de caducidad: ")
+        self.labelGetFechaCaducidadTarjeta = QLabel()
+        self.labelGetFechaCaducidadTarjeta.setText(str(self.lineEditfechaCaducidadTarjeta.text()))
+
+        self.cvv = QLabel()
+        self.cvv.setText("CVV: ")
+        self.labelGetCVV = QLabel()
+        self.labelGetCVV.setText(str(self.lineEditCVV.text()))
+
+        self.labelDatosNombre = QLabel()
+        self.labelDatosNombre.setText("Datos del usuario:")
+
+        self.labelDatosTarjeta = QLabel()
+        self.labelDatosTarjeta.setText("Datos de la tarjeta del usuario:")
+
+
+        self.centralvLayoutCompraP3 = QVBoxLayout(self.pagina3)
+        self.centralvLayoutCompraP3.addWidget(self.labelDatosNombre)
+
+        self.hLayoutCompraP3 = QHBoxLayout()
+        self.hLayoutCompraP3.addWidget(self.nombre)
+        self.hLayoutCompraP3.addWidget(self.labelGetNombre)
+        self.centralvLayoutCompraP3.addLayout(self.hLayoutCompraP3)
+
+        self.hLayout2CompraP3 = QHBoxLayout()
+        self.hLayout2CompraP3.addWidget(self.apellido1)
+        self.hLayout2CompraP3.addWidget(self.labelGetApellido1)
+        self.centralvLayoutCompraP3.addLayout(self.hLayout2CompraP3)
+
+        self.hLayout3CompraP3 = QHBoxLayout()
+        self.hLayout3CompraP3.addWidget(self.apellido2)
+        self.hLayout3CompraP3.addWidget(self.labelGetApellido2)
+        self.centralvLayoutCompraP3.addLayout(self.hLayout3CompraP3)
+
+        self.hLayout4CompraP3 = QHBoxLayout()
+        self.hLayout4CompraP3.addWidget(self.correo)
+        self.hLayout4CompraP3.addWidget(self.labelGetCorreo)
+        self.centralvLayoutCompraP3.addLayout(self.hLayout4CompraP3)
+
+        self.hLayout5CompraP3 = QHBoxLayout()
+        self.hLayout5CompraP3.addWidget(self.edad)
+        self.hLayout5CompraP3.addWidget(self.labelGetEdad)
+        self.centralvLayoutCompraP3.addLayout(self.hLayout5CompraP3)
+
+        self.centralvLayoutCompraP3.addWidget(self.labelDatosTarjeta)
+
+        self.hLayout6CompraP3 = QHBoxLayout()
+        self.hLayout6CompraP3.addWidget(self.tarjeta)
+        self.hLayout6CompraP3.addWidget(self.labelGetTarjeta)
+        self.centralvLayoutCompraP3.addLayout(self.hLayout6CompraP3)
+
+        self.hLayout7CompraP3 = QHBoxLayout()
+        self.hLayout7CompraP3.addWidget(self.fechaCaducidadTarjeta)
+        self.hLayout7CompraP3.addWidget(self.labelGetFechaCaducidadTarjeta)
+        self.centralvLayoutCompraP3.addLayout(self.hLayout7CompraP3)
+
+        self.hLayout8CompraP3 = QHBoxLayout()
+        self.hLayout8CompraP3.addWidget(self.cvv)
+        self.hLayout8CompraP3.addWidget(self.labelGetCVV)
+        self.centralvLayoutCompraP3.addLayout(self.hLayout8CompraP3)
+
+
+        # self.hLayoutCompraP3 = QHBoxLayout()
+        # self.hLayoutCompraP3.addWidget(self.label1)
+
+        # self.hLayout2CompraP3 = QHBoxLayout()
+        # self.hLayout2CompraP3.addWidget(self.label5)
+        # self.hLayout2CompraP3.addWidget(self.label5)
+
+        # self.centralvLayoutCompraP3.addLayout(self.hLayoutCompraP3)
+        # self.centralvLayoutCompraP3.addLayout(self.hLayout2CompraP3)
         
 
         self.wizardCompra.addPage(self.pagina3)
@@ -363,7 +439,7 @@ class MainWindow(QMainWindow,Ui_MainWindow):
 
         finish = self.wizard.button(QWizard.FinishButton)
 
-        finish.clicked.connect(self.generaPDFwizard)
+        finish.clicked.connect(self.generaPDFwizardReparacion)
 
         # finish = self.wizard.button(QWizard.FinishButton)
         # finish.clicked.connect(lambda:label.setText("Según su problema: "+page1.field('problema')))
@@ -371,17 +447,27 @@ class MainWindow(QMainWindow,Ui_MainWindow):
 
         self.pushButton2.clicked.connect(self.iniciarWizardReparacion)
 
-        next.clicked.connect(self.actualizarDatosWizard)
+        next.clicked.connect(self.actualizarDatosWizardReparacion)
 
         
 
     # Codigo db en caso de emergencia.
-    def actualizarDatosWizard(self):
+    def actualizarDatosWizardReparacion(self):
         self.label1.setText(str(self.combopc.currentText()))
         self.label2.setText(str(self.lineEditProblema.text()))
         self.label3.setText(str(self.comboPiezas.currentText()))
         self.label4.setText(str(self.comboDias.currentText()))
         self.label5.setText(str(self.textEditComentarios.toPlainText()))
+
+    def actualizarDatosWizardCompra(self):
+        self.labelGetNombre.setText(str(self.lineEditNombre.text()))
+        self.labelGetApellido1.setText(str(self.lineEditApellido1.text()))
+        self.labelGetApellido2.setText(str(self.lineEditApellido2.text()))
+        self.labelGetCorreo.setText(str(self.lineEditCorreo.text()))
+        self.labelGetEdad.setText(str(self.lineEditEdad.text()))
+        self.labelGetTarjeta.setText(str(self.lineEditTarjeta.text()))
+        self.labelGetFechaCaducidadTarjeta.setText(str(self.lineEditfechaCaducidadTarjeta.text()))
+        self.labelGetCVV.setText(str(self.lineEditCVV.text()))
 
     def iniciarWizardReparacion(self):
         self.wizard.show()
@@ -390,7 +476,7 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         self.wizardCompra.show()
 
 
-    def generaPDFwizard(self):
+    def generaPDFwizardReparacion(self):
     
         outfile = "ReparacionWizard.pdf"
 
@@ -458,10 +544,103 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         canvas.save()
         QMessageBox.information(self,"Finalizado", "Se ha generado el PDF")
 
-    def atras(self):
-        # app.closeAllWindows()
-        self.close()
-	    # self.wizard.close()
+    def generaPDFwizardCompra(self):
+    
+        outfile = "CompraWizard.pdf"
+
+        template = PdfReader("PlantillaCompraPDF.pdf", decompress=False).pages[0]
+        template_obj = pagexobj(template)
+
+        canvas = Canvas(outfile)
+
+        xobj_name = makerl(canvas, template_obj)
+        canvas.doForm(xobj_name)
+
+        ystart = 455
+
+        canvas.drawString(122, ystart, str(self.lineEditNombre.text()))
+
+        # Ponemos la fecha de hoy
+        today = datetime.today()
+        canvas.drawString(455, ystart, today.strftime('%F'))
+
+        # Lo ideal es partir de una posición y jugar con el tamaño de la fuente
+        # En este caso, cada línea son 28 puntos
+        canvas.drawString(294, ystart, str(self.lineEditApellido1.text())+" "+str(self.lineEditApellido2.text()))
+        # canvas.drawString(230, ystart-28, self.data['apellidos'])
+
+        canvas.drawString(175, ystart-(32), str(self.lineEditCorreo.text()))
+
+        canvas.drawString(290, ystart-(32), str(self.lineEditEdad.text()))
+
+        canvas.drawString(423, ystart-(32), str(self.textEditComentarios.toPlainText()))
+
+        # canvas.drawString(168, ystart-(2*32), str(self.lineEditTarjeta.text()))
+
+        # canvas.drawString(285, ystart-(2*32), str(self.lineEditfechaCaducidadTarjeta.text()))
+
+        # canvas.drawString(128, ystart-(3*32), str(self.lineEditCVV.text()))
+
+        # canvas.drawString(472, ystart-(3*32), "Python")
+
+        # canvas.drawString(472, ystart-(2*32), self.data['prueba'])
+
+        # Sería posible establecer un límite en el número de caracteres:
+        # field.setMaxLength(25)
+
+        # Reemplazamos los saltos de línea por espacios en los comentarios
+        comments = self.label5.text().replace('\n', ' ')
+        if comments:
+            # Separamos el texto de la primera línea (más corta que el resto)
+            lines = textwrap.wrap(comments, width=65)
+            # Nos quedamos la primera línea
+            first_line = lines[0]
+            # Guardamos el resto en remainder
+            remainder = ' '.join(lines[1:])
+
+            # Separamos el resto con una anchura mayot
+            lines = textwrap.wrap(remainder, 75)
+            # Nos quedamos con las cuatro primeras que son el máximo (sin incluir la primera)
+            lines = lines[:4]
+
+            # Escribimos la primera línea
+            canvas.drawString(147, ystart-(4*32), first_line)
+            # Y luego las otras cuatro
+            for n, l in enumerate(lines, 1):
+                canvas.drawString(80, ystart-(4*32) - (n*32), l)
+
+        ystart = 650
+
+        # Dibujamos la imagen dejando 50 píxeles a la izquierda
+        canvas.drawImage("graphic.png", 50, ystart, width=None,height=None,mask=None)
+        canvas.save()
+        QMessageBox.information(self,"Finalizado", "Se ha generado el PDF")
+
+    def mostrarCompraPDF(self):
+         # Para mostrar un PDF, es necesario habilitar los plugins. Los plugins están en https://doc.qt.io/qtforpython/PySide6/QtWebEngineCore/QWebEngineSettings.html#detailed-description
+        self.webEngineWeb.settings().setAttribute(QWebEngineSettings.PluginsEnabled, True)
+
+        # Con Path guardamos la ruta relativa al documento
+        self.rutaConPDF = Path("CompraWizard.pdf")
+        
+        # Cargamos el fichero con la ruta absoluta como uri
+        # Usando http o https también se pueden cargar páginas web
+        self.webEngineWeb.load(QUrl(self.rutaConPDF.absolute().as_uri()))
+        # self.web.load(QUrl("https://github.com/"))
+
+    def mostrarReparacionPDF(self):
+         # Para mostrar un PDF, es necesario habilitar los plugins. Los plugins están en https://doc.qt.io/qtforpython/PySide6/QtWebEngineCore/QWebEngineSettings.html#detailed-description
+        self.webEngineWeb.settings().setAttribute(QWebEngineSettings.PluginsEnabled, True)
+
+        # Con Path guardamos la ruta relativa al documento
+        self.rutaConPDF2 = Path("ReparacionWizard.pdf")
+        
+        # Cargamos el fichero con la ruta absoluta como uri
+        # Usando http o https también se pueden cargar páginas web
+        self.webEngineWeb.load(QUrl(self.rutaConPDF2.absolute().as_uri()))
+        # self.web.load(QUrl("https://github.com/"))
+
+    
 
 app = QApplication(sys.argv)
 window = MainWindow()

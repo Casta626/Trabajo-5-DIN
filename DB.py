@@ -63,6 +63,30 @@ class DB(Ui_MainWindow):
 
         self.query = QSqlQuery("SELECT stock FROM productos",db=self.db)
 
+        self.queryCaja = QSqlQuery("SELECT id_producto FROM productos WHERE productos.descripcion='Caja'",db=self.db)
+
+        while self.queryCaja.next():
+                self.idCaja=str(self.queryCaja.value(0))
+                print(self.idCaja)
+
+        self.queryGrafica = QSqlQuery("SELECT id_producto FROM productos WHERE productos.descripcion='Grafica'",db=self.db)
+
+        while self.queryGrafica.next():
+                self.idGrafica=str(self.queryGrafica.value(0))
+                print(self.idGrafica)
+
+        self.queryProcesador = QSqlQuery("SELECT id_producto FROM productos WHERE productos.descripcion='Procesador'",db=self.db)
+
+        while self.queryProcesador.next():
+                self.idProcesador=str(self.queryProcesador.value(0))
+                print(self.idProcesador)
+
+        self.queryFA = QSqlQuery("SELECT id_producto FROM productos WHERE productos.descripcion='FA'",db=self.db)
+
+        while self.queryFA.next():
+                self.idFA=str(self.queryFA.value(0))
+                print(self.idFA)
+
     def print(self):
         while self.query.next():
                 self.indice=self.query.value(0)
