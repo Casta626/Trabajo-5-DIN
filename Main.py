@@ -18,7 +18,18 @@ from PySide6.QtWebEngineCore import QWebEngineSettings
 
 
 from ui_main import Ui_MainWindow
-class MainWindow(QMainWindow,Ui_MainWindow):
+class MainWindow(DB,QMainWindow,Ui_MainWindow):
+
+    def contadorProductos(self):
+        self.datosCheckBox = ""
+        if self.checkBox_Caja.isCheckable:
+            self.datosCheckBox += self.idCaja+" "
+        if self.checkBoxGrafica.isCheckable:
+            self.datosCheckBox += self.idGrafica
+        if self.checkBoxProcesador.isCheckable:
+            self.datosCheckBox += self.idProcesador
+        if self.checkBoxFuenteAlimentacion.isCheckable:
+            self.datosCheckBox += self.idFA
 
     def __init__(self):
         super().__init__()
@@ -35,10 +46,7 @@ class MainWindow(QMainWindow,Ui_MainWindow):
         self.botonInformeCompra.clicked.connect(self.mostrarCompraPDF)
         self.botonInformeReparacion.clicked.connect(self.mostrarReparacionPDF)
 
-        self.datosCheckBox = str
-
-        if self.checkBox_Caja.isCheckable:
-            ...
+    
             # https://www.youtube.com/watch?v=vJlQ1pfETIo
 
 
