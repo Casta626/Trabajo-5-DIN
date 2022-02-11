@@ -18,7 +18,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QCheckBox, QTableView, QHBoxLayout,
     QLabel, QMainWindow, QMenuBar, QPushButton,
     QSizePolicy, QStatusBar, QTabWidget, QVBoxLayout,
-    QWidget)
+    QWidget,QGridLayout)
 
 from PySide6.QtWebEngineWidgets import QWebEngineView
 import recursos
@@ -57,6 +57,10 @@ class Ui_MainWindow(object):
         self.labelGrafica.setMaximumSize(QSize(180, 180))
         self.labelGrafica.setPixmap(QPixmap(u":/CastaPC/81XHNWut5WL._AC_SL1500_.jpg"))
         self.labelGrafica.setScaledContents(True)
+        self.horizontalLayout_4 = QHBoxLayout(self.centralwidget)
+        self.tabWidget = QTabWidget(self.centralwidget)
+        self.gridLayout = QGridLayout(self.tabCompra)
+        self.gridLayout.setObjectName(u"gridLayout")
 
         self.verticalLayout_4.addWidget(self.labelGrafica)
 
@@ -163,7 +167,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_Informes.setObjectName(u"verticalLayout")
         self.verticalLayout_Informes.setContentsMargins(0, 0, 0, 0)
 
-
+#################################################################################################
 
         self.webEngineWeb = QWebEngineView(self.tabInformes)
         self.webEngineWeb.setObjectName(u"webEngineWeb")
@@ -171,6 +175,8 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_Informes.addWidget(self.webEngineWeb)
        
+#################################################################################################
+
         self.horizontalLayout_Informes = QHBoxLayout()
         self.horizontalLayout_Informes.setObjectName(u"horizontalLayout")
         self.botonInformeCompra = QPushButton(self.tabInformes)
@@ -193,7 +199,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.tabWidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 489, 22))
+        # self.menubar.setGeometry(QRect(0, 0, 489, 22))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
