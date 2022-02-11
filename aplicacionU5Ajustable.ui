@@ -18,19 +18,19 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>3</number>
       </property>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="tabCompras">
        <attribute name="title">
         <string>Compra de PCs</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout">
-        <item row="0" column="0">
-         <layout class="QVBoxLayout" name="verticalLayout_6">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QVBoxLayout" name="vLayoutCompras">
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout">
+           <layout class="QHBoxLayout" name="hLayoutG_FA">
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_4">
+             <layout class="QVBoxLayout" name="vLayoutGrafica">
               <item>
                <widget class="QLabel" name="labelGrafica">
                 <property name="maximumSize">
@@ -60,9 +60,9 @@
              </layout>
             </item>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_2">
+             <layout class="QVBoxLayout" name="vLayoutFA">
               <item>
-               <widget class="QLabel" name="label_2">
+               <widget class="QLabel" name="labelFA">
                 <property name="maximumSize">
                  <size>
                   <width>180</width>
@@ -81,7 +81,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="checkBoxFuenteAlimentacion">
+               <widget class="QCheckBox" name="checkBoxFA">
                 <property name="text">
                  <string>Fuente de Alimentación 850 w</string>
                 </property>
@@ -92,9 +92,9 @@
            </layout>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <layout class="QHBoxLayout" name="hLayoutP_C">
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout">
+             <layout class="QVBoxLayout" name="vLayoutProcesaor">
               <item>
                <widget class="QLabel" name="labelProcesador">
                 <property name="maximumSize">
@@ -124,7 +124,7 @@
              </layout>
             </item>
             <item>
-             <layout class="QVBoxLayout" name="verticalLayout_3">
+             <layout class="QVBoxLayout" name="vLayoutCaja">
               <item>
                <widget class="QLabel" name="labelCaja">
                 <property name="maximumSize">
@@ -145,7 +145,7 @@
                </widget>
               </item>
               <item>
-               <widget class="QCheckBox" name="checkBox_Caja">
+               <widget class="QCheckBox" name="checkBoxCaja">
                 <property name="text">
                  <string>Caja Extended ATX </string>
                 </property>
@@ -157,8 +157,8 @@
           </item>
          </layout>
         </item>
-        <item row="0" column="1">
-         <widget class="QPushButton" name="pushButton">
+        <item>
+         <widget class="QPushButton" name="botonAceptarCompras">
           <property name="styleSheet">
            <string notr="true"/>
           </property>
@@ -192,6 +192,11 @@
          <widget class="QColumnView" name="columnView"/>
         </item>
        </layout>
+      </widget>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Página</string>
+       </attribute>
       </widget>
      </widget>
     </item>
