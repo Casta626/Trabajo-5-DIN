@@ -271,7 +271,7 @@ class DB(Ui_MainWindow):
 
                 self.outfile = "Compras.pdf"
 
-                self.template = PdfReader("template.pdf", decompress=False).pages[0]
+                self.template = PdfReader("PlantillaReparacionWizard.pdf", decompress=False).pages[0]
                 self.template_obj = pagexobj(self.template)
                 self.canvas = Canvas(self.outfile)
 

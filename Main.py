@@ -515,30 +515,26 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
 
         ystart = 455
 
-        canvas.drawString(122, ystart, str(self.combopc.currentText()))
+        canvas.drawString(177, ystart, str(self.combopc.currentText()))
 
         # Ponemos la fecha de hoy
         today = datetime.today()
-        canvas.drawString(455, ystart, today.strftime('%F'))
+        canvas.drawString(455, ystart+34, today.strftime('%F'))
 
         # Lo ideal es partir de una posición y jugar con el tamaño de la fuente
         # En este caso, cada línea son 28 puntos
-        canvas.drawString(294, ystart, str(self.lineEditProblema.text()))
+        canvas.drawString(325, ystart, str(self.lineEditProblema.text()))
         # canvas.drawString(230, ystart-28, self.data['apellidos'])
 
-        canvas.drawString(175, ystart-(32), str(self.comboPiezas.currentText()))
+        canvas.drawString(172, ystart-(32), str(self.comboPiezas.currentText()))
 
-        canvas.drawString(290, ystart-(32), str(self.comboDias.currentText()))
-
-        canvas.drawString(423, ystart-(32), str(self.textEditComentarios.toPlainText()))
+        canvas.drawString(362, ystart-(32), str(self.comboDias.currentText()))
 
         # canvas.drawString(168, ystart-(2*32), self.data['n_perifericos'])
 
         # canvas.drawString(285, ystart-(2*32), self.data['perifericos'])
 
         # canvas.drawString(128, ystart-(3*32), self.data['direccion'])
-
-        canvas.drawString(472, ystart-(3*32), "Python")
 
         # canvas.drawString(472, ystart-(2*32), self.data['prueba'])
 
@@ -561,10 +557,10 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
             lines = lines[:4]
 
             # Escribimos la primera línea
-            canvas.drawString(147, ystart-(4*32), first_line)
+            canvas.drawString(147, ystart-(2*32), first_line)
             # Y luego las otras cuatro
             for n, l in enumerate(lines, 1):
-                canvas.drawString(80, ystart-(4*32) - (n*32), l)
+                canvas.drawString(80, ystart-(2*32) - (n*32), l)
 
         canvas.save()
         QMessageBox.information(self,"Finalizado", "Se ha generado el PDF")
