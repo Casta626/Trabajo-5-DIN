@@ -17,8 +17,8 @@ from Graficas import Graficas
 from PySide6.QtWebEngineCore import QWebEngineSettings
 
 
-from ui_main import Ui_MainWindow
-class MainWindow(DB,QMainWindow,Ui_MainWindow):
+from pruebaDefinitiva import Ui_MainWindowDefinitiva
+class MainWindow(DB,QMainWindow,Ui_MainWindowDefinitiva):
 
     def contadorProductos(self):
         self.precioTotal = 0
