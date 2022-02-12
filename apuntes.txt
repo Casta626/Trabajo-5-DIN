@@ -1,0 +1,3 @@
+Meter todos los stocks en un array para imprimirlos.
+
+Buscar CSS para la aplicación.
