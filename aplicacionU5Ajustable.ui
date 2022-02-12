@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>548</width>
-    <height>501</height>
+    <width>562</width>
+    <height>567</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,11 +18,16 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tabCompras">
+       <attribute name="icon">
+        <iconset>
+         <selectedoff>:/CastaPC/CompraIcono.png</selectedoff>
+        </iconset>
+       </attribute>
        <attribute name="title">
-        <string>Compra de PCs</string>
+        <string>Compras</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
@@ -169,66 +174,120 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="tabReparacion">
+       <attribute name="icon">
+        <iconset>
+         <selectedoff>:/CastaPC/ReparacionIcono.png</selectedoff>
+        </iconset>
+       </attribute>
        <attribute name="title">
         <string>Reparación</string>
        </attribute>
        <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="0">
-         <widget class="QPushButton" name="pushButton_2">
+        <item row="1" column="0">
+         <widget class="QPushButton" name="botonReparacion">
           <property name="text">
-           <string>PushButton</string>
+           <string>Asistente</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="labelImagenReparacion">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="Imagenes Paco/recursos.qrc">:/CastaPC/Reparacion.png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_3">
+      <widget class="QWidget" name="tabDB">
+       <attribute name="icon">
+        <iconset>
+         <activeon>:/CastaPC/DBIcono.png</activeon>
+        </iconset>
+       </attribute>
        <attribute name="title">
         <string>Base de Datos</string>
        </attribute>
-       <widget class="QTableView" name="tableView">
-        <property name="geometry">
-         <rect>
-          <x>180</x>
-          <y>140</y>
-          <width>256</width>
-          <height>192</height>
-         </rect>
-        </property>
-       </widget>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Datos de Productos</string>
+          </property>
+          <layout class="QFormLayout" name="formLayout">
+           <item row="0" column="0">
+            <widget class="QLabel" name="labelIDDB">
+             <property name="text">
+              <string>ID</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="lineEditIDDB"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="labelProductoDB">
+             <property name="text">
+              <string>Producto</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="lineEditProductoDB"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="labelDescripcionDB">
+             <property name="text">
+              <string>Descripción</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QComboBox" name="comboBoxDescripcionDB"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableView" name="tablaDB"/>
+        </item>
+       </layout>
       </widget>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="tabInformes">
+       <attribute name="icon">
+        <iconset>
+         <selectedon>:/CastaPC/InformeIcono.png</selectedon>
+        </iconset>
+       </attribute>
        <attribute name="title">
-        <string>Página</string>
+        <string>Informes</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
+         <widget class="QListView" name="cambiarPorWebEngine"/>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hLayoutBotonesInformes">
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_2">
-            <item>
-             <widget class="QListView" name="listView"/>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" name="horizontalLayout">
-              <item>
-               <widget class="QPushButton" name="pushButton">
-                <property name="text">
-                 <string>PushButton</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="pushButton_3">
-                <property name="text">
-                 <string>PushButton</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
+           <widget class="QPushButton" name="botonReparacionInforme">
+            <property name="text">
+             <string>Informe de Compras</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="botonCompraInforme">
+            <property name="text">
+             <string>Informe de la Reparación</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
@@ -243,12 +302,66 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>548</width>
+     <width>562</width>
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuBase_de_Datos">
+    <property name="title">
+     <string>Base de Datos</string>
+    </property>
+    <addaction name="actionInsertar"/>
+    <addaction name="actionModificar"/>
+    <addaction name="actionEliminar"/>
+   </widget>
+   <addaction name="menuBase_de_Datos"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionInsertar">
+   <property name="icon">
+    <iconset resource="Imagenes Paco/recursos.qrc">
+     <normaloff>:/CastaPC/database--plus.png</normaloff>:/CastaPC/database--plus.png</iconset>
+   </property>
+   <property name="text">
+    <string>Insertar</string>
+   </property>
+   <property name="toolTip">
+    <string>Inserta datos en la base de datos.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionModificar">
+   <property name="icon">
+    <iconset resource="Imagenes Paco/recursos.qrc">
+     <normaloff>:/CastaPC/database--arrow.png</normaloff>:/CastaPC/database--arrow.png</iconset>
+   </property>
+   <property name="text">
+    <string>Modificar</string>
+   </property>
+   <property name="toolTip">
+    <string>Modifica datos en la base de datos.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="actionEliminar">
+   <property name="icon">
+    <iconset resource="Imagenes Paco/recursos.qrc">
+     <normaloff>:/CastaPC/database--minus.png</normaloff>:/CastaPC/database--minus.png</iconset>
+   </property>
+   <property name="text">
+    <string>Eliminar</string>
+   </property>
+   <property name="toolTip">
+    <string>Elimina datos en la base de datos.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="Imagenes Paco/recursos.qrc"/>

@@ -2,7 +2,16 @@
   <qresource prefix="CastaPC">
     <file>81XHNWut5WL._AC_SL1500_.jpg</file>
     <file>amd-ryzen-5-3600-36ghz.jpg</file>
+    <file>CompraIcono.png</file>
+    <file>database--arrow.png</file>
+    <file>database--minus.png</file>
+    <file>database--plus.png</file>
+    <file>DBIcono.png</file>
     <file>fuente-alimentacion-atx-850w-gigabyte-80--gold-modular--gp-p850gm-main.jpg</file>
+    <file>InformeIcono.png</file>
+    <file>recursos.qrc</file>
+    <file>Reparacion.png</file>
+    <file>ReparacionIcono.png</file>
     <file>wipoid-pc-gaming-sniper.jpg</file>
   </qresource>
 </RCC>
