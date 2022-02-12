@@ -17,13 +17,13 @@ from Graficas import Graficas
 from PySide6.QtWebEngineCore import QWebEngineSettings
 
 
-from pruebaDefinitiva import Ui_MainWindowDefinitiva
-class MainWindow(DB,QMainWindow,Ui_MainWindowDefinitiva):
+from pruebaDefinitiva2 import Ui_MainWindow
+class MainWindow(DB,QMainWindow,Ui_MainWindow):
 
     def contadorProductos(self):
         self.precioTotal = 0
         self.datosCheckBox = ""
-        if self.checkBox_Caja.isChecked():
+        if self.checkBoxCaja.isChecked():
             self.datosCheckBox += self.idCaja+" "
             self.precioTotal += self.idCajaPrecio
 
@@ -35,21 +35,18 @@ class MainWindow(DB,QMainWindow,Ui_MainWindowDefinitiva):
             self.datosCheckBox += self.idProcesador+" "
             self.precioTotal += self.idProcesadorPrecio
 
-        if self.checkBoxFuenteAlimentacion.isChecked():
+        if self.checkBoxFA.isChecked():
             self.datosCheckBox += self.idFA
             self.precioTotal += self.idFAPrecio
 
         print(self.datosCheckBox)
         print(self.precioTotal)
+        self.datosPrecioTotal = self.precioTotal
+        self.datosProductosTotal = self.datosCheckBox
 
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-
-        # self.lineEdtiID = QLineEdit()
-        # self.lineEditProducto = QLineEdit()
-        # self.comboDescripcion = QComboBox()
-
 
         DB.lanzarDB(self)
 
@@ -57,12 +54,16 @@ class MainWindow(DB,QMainWindow,Ui_MainWindowDefinitiva):
 
         self.mostrarCompraPDF()
 
-        self.botonInformeCompra.clicked.connect(self.mostrarCompraPDF)
-        self.botonInformeReparacion.clicked.connect(self.mostrarReparacionPDF)
+        self.botonCompraInforme.clicked.connect(self.mostrarCompraPDF)
+        self.botonReparacionInforme.clicked.connect(self.mostrarReparacionPDF)
 
-        self.pushButton.clicked.connect(self.contadorProductos)
+        self.botonAceptarCompras.clicked.connect(self.contadorProductos)
 
-    
+
+        self.datosPrecioTotal = 0
+
+        self.datosProductosTotal = ""
+   
             # https://www.youtube.com/watch?v=vJlQ1pfETIo
 
 
@@ -128,7 +129,7 @@ class MainWindow(DB,QMainWindow,Ui_MainWindowDefinitiva):
         self.vLayoutCompra.addLayout(vLayoutCompra2)
         self.vLayoutCompra.addLayout(hLayoutCompra)
 
-        self.pushButton.clicked.connect(self.iniciarWizardCompra)
+        self.botonAceptarCompras.clicked.connect(self.iniciarWizardCompra)
         
 
         self.wizardCompra.addPage(self.pagina1)
@@ -469,7 +470,7 @@ class MainWindow(DB,QMainWindow,Ui_MainWindowDefinitiva):
         # finish.clicked.connect(lambda:label.setText("Según su problema: "+page1.field('problema')))
 
 
-        self.pushButton2.clicked.connect(self.iniciarWizardReparacion)
+        self.botonReparacion.clicked.connect(self.iniciarWizardReparacion)
 
         next.clicked.connect(self.actualizarDatosWizardReparacion)
 
@@ -504,7 +505,7 @@ class MainWindow(DB,QMainWindow,Ui_MainWindowDefinitiva):
     
         outfile = "ReparacionWizard.pdf"
 
-        template = PdfReader("template.pdf", decompress=False).pages[0]
+        template = PdfReader("PlantillaReparacionWizard.pdf", decompress=False).pages[0]
         template_obj = pagexobj(template)
 
         canvas = Canvas(outfile)
@@ -545,7 +546,7 @@ class MainWindow(DB,QMainWindow,Ui_MainWindowDefinitiva):
         # field.setMaxLength(25)
 
         # Reemplazamos los saltos de línea por espacios en los comentarios
-        comments = self.label5.text().replace('\n', ' ')
+        comments = self.textEditComentarios.toPlainText().replace('\n', ' ')
         if comments:
             # Separamos el texto de la primera línea (más corta que el resto)
             lines = textwrap.wrap(comments, width=65)
@@ -595,11 +596,11 @@ class MainWindow(DB,QMainWindow,Ui_MainWindowDefinitiva):
 
         canvas.drawString(175, ystart-(32), str(self.lineEditCorreo.text()))
 
-        canvas.drawString(290, ystart-(32), str(self.lineEditEdad.text()))
+        canvas.drawString(500, ystart-(32), str(self.lineEditEdad.text()))
 
-        canvas.drawString(423, ystart-(32), str(self.textEditComentarios.toPlainText()))
+        canvas.drawString(190, ystart-(2*32), str(self.datosProductosTotal))
 
-        # canvas.drawString(168, ystart-(2*32), str(self.lineEditTarjeta.text()))
+        canvas.drawString(455, ystart-(2*32), str(round(self.datosPrecioTotal,2)))
 
         # canvas.drawString(285, ystart-(2*32), str(self.lineEditfechaCaducidadTarjeta.text()))
 
@@ -633,10 +634,10 @@ class MainWindow(DB,QMainWindow,Ui_MainWindowDefinitiva):
             for n, l in enumerate(lines, 1):
                 canvas.drawString(80, ystart-(4*32) - (n*32), l)
 
-        ystart = 650
+        ystart = 50
 
         # Dibujamos la imagen dejando 50 píxeles a la izquierda
-        canvas.drawImage("graphic.png", 50, ystart, width=None,height=None,mask=None)
+        canvas.drawImage("graphic.png", 125, ystart, width=None,height=None,mask=None)
         canvas.save()
         QMessageBox.information(self,"Finalizado", "Se ha generado el PDF")
 

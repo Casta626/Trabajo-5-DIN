@@ -22,7 +22,9 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QFormLayout,
     QMenu, QMenuBar, QPushButton, QSizePolicy,
     QStatusBar, QTabWidget, QTableView, QVBoxLayout,
     QWidget)
-import recursos_rc
+from PySide6.QtWebEngineWidgets import QWebEngineView
+from PySide6.QtWebEngineCore import QWebEngineSettings
+import recursos2
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -207,6 +209,28 @@ class Ui_MainWindow(object):
 
         self.formLayout.setWidget(2, QFormLayout.FieldRole, self.comboBoxDescripcionDB)
 
+        self.labelPrecioDB = QLabel(self.groupBox)
+        self.labelPrecioDB.setText("Precio")
+        self.labelPrecioDB.setObjectName(u"labelDescripcionDB")
+
+        self.formLayout.setWidget(3, QFormLayout.LabelRole, self.labelPrecioDB)
+
+        self.lineEditPrecioDB = QLineEdit(self.groupBox)
+        self.lineEditPrecioDB.setObjectName(u"comboBoxDescripcionDB")
+
+        self.formLayout.setWidget(3, QFormLayout.FieldRole, self.lineEditPrecioDB)
+
+        self.labelStockDB = QLabel(self.groupBox)
+        self.labelStockDB.setText("Stock")
+        self.labelStockDB.setObjectName(u"labelDescripcionDB")
+
+        self.formLayout.setWidget(4, QFormLayout.LabelRole, self.labelStockDB)
+
+        self.lineEditStockDB = QLineEdit(self.groupBox)
+        self.lineEditStockDB.setObjectName(u"comboBoxDescripcionDB")
+
+        self.formLayout.setWidget(4, QFormLayout.FieldRole, self.lineEditStockDB)
+
 
         self.verticalLayout_5.addWidget(self.groupBox)
 
@@ -222,10 +246,10 @@ class Ui_MainWindow(object):
         self.tabInformes.setObjectName(u"tabInformes")
         self.verticalLayout_4 = QVBoxLayout(self.tabInformes)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.cambiarPorWebEngine = QListView(self.tabInformes)
-        self.cambiarPorWebEngine.setObjectName(u"cambiarPorWebEngine")
+        self.webEngineWeb = QWebEngineView(self.tabInformes)
+        self.webEngineWeb.setObjectName(u"webEngineWeb")
 
-        self.verticalLayout_4.addWidget(self.cambiarPorWebEngine)
+        self.verticalLayout_4.addWidget(self.webEngineWeb)
 
         self.hLayoutBotonesInformes = QHBoxLayout()
         self.hLayoutBotonesInformes.setObjectName(u"hLayoutBotonesInformes")
@@ -266,7 +290,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(3)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
