@@ -8,7 +8,7 @@ from pdfrw.buildxobj import pagexobj
 from pdfrw.toreportlab import makerl
 import pyqtgraph as pg
 
-from pruebaDefinitiva2 import Ui_MainWindow
+from ui_main import Ui_MainWindow
 class DB(Ui_MainWindow):
     
         def __init__(self):

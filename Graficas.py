@@ -6,7 +6,7 @@ from pdfrw.toreportlab import makerl
 import pyqtgraph as pg
 import pyqtgraph.exporters
 
-from pruebaDefinitiva2 import Ui_MainWindow
+from ui_main import Ui_MainWindow
 from DB import DB
 
 class Graficas(DB,Ui_MainWindow):
