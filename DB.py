@@ -8,6 +8,7 @@ from pdfrw.buildxobj import pagexobj
 from pdfrw.toreportlab import makerl
 import pyqtgraph as pg
 
+
 from ui_main import Ui_MainWindow
 class DB(Ui_MainWindow):
     
