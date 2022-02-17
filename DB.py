@@ -16,7 +16,7 @@ class DB(Ui_MainWindow):
 
         def lanzarDB(self):
                 self.db = QSqlDatabase("QSQLITE")
-                self.db.setDatabaseName("sqlitePrueba.sqlite")
+                self.db.setDatabaseName("BaseDatos.sqlite")
 
                 self.db.open()
 
