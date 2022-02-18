@@ -48,6 +48,11 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
 
+        self.indice = 0
+        self.indice2 = 0
+        self.indice3 = 0
+        self.indice4 = 0
+
         DB.lanzarDB(self)
 
         DB.generaImgGrafica(self)
