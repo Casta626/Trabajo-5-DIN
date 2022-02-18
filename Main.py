@@ -662,9 +662,9 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
         # self.web.load(QUrl("https://github.com/"))
 
     
-
-app = QApplication(sys.argv)
-window = MainWindow()
-window.setWindowTitle('Casta PC')
-window.show()
-app.exec()
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.setWindowTitle('Casta PC')
+    window.show()
+    app.exec()
