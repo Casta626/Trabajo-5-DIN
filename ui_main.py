@@ -204,10 +204,10 @@ class Ui_MainWindow(object):
 
         self.formLayout.setWidget(2, QFormLayout.LabelRole, self.labelDescripcionDB)
 
-        self.comboBoxDescripcionDB = QComboBox(self.groupBox)
-        self.comboBoxDescripcionDB.setObjectName(u"comboBoxDescripcionDB")
+        self.lineEditDescripcionDB = QLineEdit(self.groupBox)
+        self.lineEditDescripcionDB.setObjectName(u"lineEditDescripcionDB")
 
-        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.comboBoxDescripcionDB)
+        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.lineEditDescripcionDB)
 
         self.labelPrecioDB = QLabel(self.groupBox)
         self.labelPrecioDB.setText("Precio")
@@ -216,7 +216,7 @@ class Ui_MainWindow(object):
         self.formLayout.setWidget(3, QFormLayout.LabelRole, self.labelPrecioDB)
 
         self.lineEditPrecioDB = QLineEdit(self.groupBox)
-        self.lineEditPrecioDB.setObjectName(u"comboBoxDescripcionDB")
+        self.lineEditPrecioDB.setObjectName(u"lineEditDescripcionDB")
 
         self.formLayout.setWidget(3, QFormLayout.FieldRole, self.lineEditPrecioDB)
 
@@ -227,7 +227,7 @@ class Ui_MainWindow(object):
         self.formLayout.setWidget(4, QFormLayout.LabelRole, self.labelStockDB)
 
         self.lineEditStockDB = QLineEdit(self.groupBox)
-        self.lineEditStockDB.setObjectName(u"comboBoxDescripcionDB")
+        self.lineEditStockDB.setObjectName(u"lineEditDescripcionDB")
 
         self.formLayout.setWidget(4, QFormLayout.FieldRole, self.lineEditStockDB)
 

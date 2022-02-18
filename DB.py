@@ -27,9 +27,12 @@ class DB(Ui_MainWindow):
                 # Creamos una query para obtener todos los artistas de la tabla Artist
                 self.queryCombo = QSqlQuery("SELECT DISTINCT  descripcion FROM productos",db=self.db)
                 # Recorremos el resultado de esa query agregando al comboBox el listado de artistas
-                while self.queryCombo.next():
-                     self.comboBoxDescripcionDB.addItem(self.queryCombo.value(0))
-                     print(self.comboBoxDescripcionDB)
+
+                # while self.queryCombo.next():
+                #      self.comboBoxDescripcionDB.addItem(self.queryCombo.value(0))
+                #      print(self.comboBoxDescripcionDB)
+
+                
 
                 # Creamos un modelo relacional de SQL
                 self.modelo = QSqlRelationalTableModel(db=self.db)
@@ -145,8 +148,8 @@ class DB(Ui_MainWindow):
                         # Modificamos los campos del formulario para establecer esos valores
                         self.lineEditIDDB.setText(str(id))
                         self.lineEditProductoDB.setText(producto)
-                        valorModificar = self.comboBoxDescripcionDB.findText(descripcion)
-                        self.comboBoxDescripcionDB.setCurrentIndex(valorModificar)
+                        # valorModificar = self.comboBoxDescripcionDB.findText(descripcion)
+                        self.lineEditDescripcionDB.setText(descripcion)
                         self.lineEditPrecioDB.setText(str(precio))
                         self.lineEditStockDB.setText(str(stock))
                 else:
@@ -159,17 +162,17 @@ class DB(Ui_MainWindow):
                         # Obtenemos los valores de los campos del formulario
                         id = self.lineEditIDDB.text()
                         producto = self.lineEditProductoDB.text()
-                        descripcion = self.comboBoxDescripcionDB.currentText()
-                        query = QSqlQuery("SELECT descripcion FROM productos WHERE descripcion='"+descripcion+"'",db=self.db)
+                        descripcion = self.lineEditDescripcionDB.text()
+                        # query = QSqlQuery("SELECT descripcion FROM productos WHERE descripcion='"+descripcion+"'",db=self.db)
                         precio = self.lineEditPrecioDB.text()
                         stock = self.lineEditStockDB.text()
-                        while query.next():
-                                self.valorModificar=query.value(0)
-                                print(self.valorModificar)
+                        # while query.next():
+                        #         self.valorModificar=query.value(0)
+                        #         print(self.valorModificar)
                         # Actualizamos los campos en el modelo
                         self.modelo.setData(self.modelo.index(self.fila, 1), id)
                         self.modelo.setData(self.modelo.index(self.fila, 1), producto)
-                        self.modelo.setData(self.modelo.index(self.fila, 2), self.valorModificar)
+                        self.modelo.setData(self.modelo.index(self.fila, 2), descripcion)
                         self.modelo.setData(self.modelo.index(self.fila, 3), precio)
                         self.modelo.setData(self.modelo.index(self.fila, 4), stock)
                         # Ejecutamos los cambios en el modelo
@@ -185,7 +188,7 @@ class DB(Ui_MainWindow):
                 # Ponemos en blanco el texto del título en el formulario
                 self.lineEditProductoDB.setText("")
                 # Ponemos el comboBox de artistas al primero de la lista
-                self.comboBoxDescripcionDB.setCurrentIndex(0)
+                self.lineEditDescripcionDB.setText("")
                 # Establecemos en blanco los valores (título y artista) de esa nueva fila
                 self.modelo.setData(self.modelo.index(nuevaFila, 1), "")
                 self.modelo.setData(self.modelo.index(nuevaFila, 2), "")
@@ -206,7 +209,7 @@ class DB(Ui_MainWindow):
                         # Reseteamos los valores en los campos del formulario
                         self.lineEditIDDB.setText("")
                         self.lineEditProductoDB.setText("")
-                        self.comboBoxDescripcionDB.setCurrentIndex("")
+                        self.lineEditDescripcionDB.setText("")
                         self.lineEditPrecioDB.setText("")
                         self.lineEditStockDB.setText("")
 
