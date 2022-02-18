@@ -16,7 +16,7 @@ from PySide6.QtCore import Qt,QUrl
 from DB import DB
 from Graficas import Graficas
 from PySide6.QtWebEngineCore import QWebEngineSettings
-from Qt import QtGui
+# from Qt import QtGui
 
 
 from ui_main import Ui_MainWindow
@@ -46,14 +46,14 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
         self.datosPrecioTotal = self.precioTotal
         self.datosProductosTotal = self.datosCheckBox
 
-        self.setWindowIcon(QtGui.QIcon(os.path.join(basedir, 'sg.ico')))
-        app.setWindowIcon(QtGui.QIcon('sg.ico'))
-        try:
-            from ctypes import windll  # Only exists on Windows.
-            myappid = 'mycompany.myproduct.subproduct.version'
-            windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
-        except ImportError:
-            pass
+        # self.setWindowIcon(QtGui.QIcon(os.path.join(basedir, 'sg.ico')))
+        # app.setWindowIcon(QtGui.QIcon('sg.ico'))
+        # try:
+        #     from ctypes import windll  # Only exists on Windows.
+        #     myappid = 'mycompany.myproduct.subproduct.version'
+        #     windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+        # except ImportError:
+        #     pass
 
 
     def __init__(self):
