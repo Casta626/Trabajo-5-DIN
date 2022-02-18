@@ -283,3 +283,5 @@ class DB(Ui_MainWindow):
                 self.canvas.drawImage("graphic.png", 50, ystart, width=None,height=None,mask=None)
 
                 self.canvas.save()
+
+                self.plt.hide()
