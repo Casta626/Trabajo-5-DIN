@@ -253,15 +253,15 @@ class Ui_MainWindow(object):
 
         self.hLayoutBotonesInformes = QHBoxLayout()
         self.hLayoutBotonesInformes.setObjectName(u"hLayoutBotonesInformes")
-        self.botonReparacionInforme = QPushButton(self.tabInformes)
-        self.botonReparacionInforme.setObjectName(u"botonReparacionInforme")
-
-        self.hLayoutBotonesInformes.addWidget(self.botonReparacionInforme)
-
         self.botonCompraInforme = QPushButton(self.tabInformes)
         self.botonCompraInforme.setObjectName(u"botonCompraInforme")
 
         self.hLayoutBotonesInformes.addWidget(self.botonCompraInforme)
+
+        self.botonReparacionInforme = QPushButton(self.tabInformes)
+        self.botonReparacionInforme.setObjectName(u"botonReparacionInforme")
+
+        self.hLayoutBotonesInformes.addWidget(self.botonReparacionInforme)
 
 
         self.verticalLayout_4.addLayout(self.hLayoutBotonesInformes)
@@ -337,8 +337,8 @@ class Ui_MainWindow(object):
         self.labelProductoDB.setText(QCoreApplication.translate("MainWindow", u"Producto", None))
         self.labelDescripcionDB.setText(QCoreApplication.translate("MainWindow", u"Descripci\u00f3n", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabDB), QCoreApplication.translate("MainWindow", u"Base de Datos", None))
-        self.botonReparacionInforme.setText(QCoreApplication.translate("MainWindow", u"Informe de Compras", None))
-        self.botonCompraInforme.setText(QCoreApplication.translate("MainWindow", u"Informe de la Reparaci\u00f3n", None))
+        self.botonCompraInforme.setText(QCoreApplication.translate("MainWindow", u"Informe de Compras", None))
+        self.botonReparacionInforme.setText(QCoreApplication.translate("MainWindow", u"Informe de la Reparaci\u00f3n", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabInformes), QCoreApplication.translate("MainWindow", u"Informes", None))
         self.menuBase_de_Datos.setTitle(QCoreApplication.translate("MainWindow", u"Base de Datos", None))
     # retranslateUi
