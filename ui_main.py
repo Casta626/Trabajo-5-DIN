@@ -45,8 +45,6 @@ class Ui_MainWindow(object):
         self.actionEliminar.setObjectName(u"actionEliminar")
         icon2 = QIcon()
         icon2.addFile(u":/CastaPC/database--minus.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.setWindowIcon(QtGui.QIcon(os.path.join(basedir, 'sg.ico')))
-        app.setWindowIcon(QtGui.QIcon('sg.ico'))
         self.actionEliminar.setIcon(icon2)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
