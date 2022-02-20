@@ -17,9 +17,13 @@ from DB import DB
 from Graficas import Graficas
 from PySide6.QtWebEngineCore import QWebEngineSettings
 # from Qt import QtGui
-
+from PySide6 import QtWidgets, QtGui
+import sys
 
 from ui_main import Ui_MainWindow
+
+basedir = os.path.dirname("CastaPC.ico")
+
 class MainWindow(DB,QMainWindow,Ui_MainWindow):
 
     def contadorProductos(self):
@@ -59,6 +63,13 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+
+        try:
+            from ctypes import windll  # Only exists on Windows.
+            myappid = 'mycompany.myproduct.subproduct.version'
+            windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+        except ImportError:
+            pass
 
         self.indice = 0
         self.indice2 = 0
@@ -681,7 +692,11 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
     
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+    app.setWindowIcon(QtGui.QIcon('icono.ico'))
     window = MainWindow()
+    
+    window.setWindowIcon(QtGui.QIcon(os.path.join(basedir, 'icono.ico')))
+    window.setWindowIcon(QtGui.QIcon('icono.ico'))
     window.setWindowTitle('Casta PC')
     window.show()
     app.exec()
