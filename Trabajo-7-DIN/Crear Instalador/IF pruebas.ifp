@@ -1,0 +1,521 @@
+﻿
+[Header]
+ProjectFileVersion = 1.1
+[General]
+Program name = Casta PC
+Program version = 1.0
+Windows 2000 = 0
+Windows XP = 0
+Windows Server 2003 = 0
+Windows Vista = 0
+Windows Server 2008 = 0
+Windows 7 = 1
+Windows 8 = 1
+Windows 10 = 1
+Windows Server 2016 = 0
+DoNotCheckOS = 0
+Company name = CastaSoft
+Website = https://github.com/Casta626/Trabajo-5-DIN/compare/Trabajo-7-DIN
+SFA = 0
+DFA = 0
+Comp = 1
+[Graphics]
+Wizard image = <main>
+Header image = <main>
+Show Label = 1
+VisualStylesEnabled = 1
+[Files]
+Installation path = <ProgramFiles>\CastaSoft\CastaPC\
+Autcip = 1
+[Uninstall]
+Vwau = 0
+Website = https://
+Include uninstaller = 1
+Uninstaller filename = Uninstall
+UseCustomDisplayIcon = 0
+CustomDisplayIcon = <InstallPath>\
+[Licence]
+Licence dialog = 0
+[Finish]
+Sart program = 1
+Reboot computer = 0
+Program = <InstallPath>\
+ProgramArguments = 
+[Shortcuts]
+Allowtc = 0
+Shortcut path = <Company>\<AppName>\
+[Serialoptions]
+Allows = 0
+Number = 1000
+Mask = #####-#####-#####-#####
+[SplashScreen]
+Image = 
+Sound = 
+Time = 2
+PlaySound = 0
+Allow = 0
+[Build]
+File = D:\Programas\Casta\castapc.exe
+SetupIconPath = C:\Users\ercas\Desktop\Trabajo-5-DIN\icono.ico
+UninstallIconPath = C:\Users\ercas\Desktop\Trabajo-5-DIN\icono.ico
+CompressionMethod = 0
+CompressionLevel = 2
+[Updater]
+Allow = 0
+1 = <AppName>
+2 = <AppVersion>
+3 = http://
+4 = http://
+5 = http://
+6 = Update
+Language = 0
+RunProg = 
+RunProgs = 0
+Execdlls = 0
+[Languages]
+[Files/Dirs]
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\_asyncio.pyd
+59.9 KB
+pyd
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\_bz2.pyd
+78.9 KB
+pyd
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\_ctypes.pyd
+116.9 KB
+pyd
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\_decimal.pyd
+244.9 KB
+pyd
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\_elementtree.pyd
+119.9 KB
+pyd
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\_hashlib.pyd
+58.9 KB
+pyd
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\_lzma.pyd
+150.4 KB
+pyd
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\_multiprocessing.pyd
+29.9 KB
+pyd
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\_overlapped.pyd
+44.9 KB
+pyd
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\_queue.pyd
+26.9 KB
+pyd
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\_socket.pyd
+73.4 KB
+pyd
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\_ssl.pyd
+152.9 KB
+pyd
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\base_library.zip
+812.1 KB
+zip
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\BaseDatos.sqlite
+20 KB
+sqlite
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\CastaPC.ico
+165.1 KB
+ico
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\CastaPC.png
+37.6 KB
+png
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\CastaSoftIndustries.png
+17.2 KB
+png
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Compras.pdf
+54.3 KB
+pdf
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\CompraWizard.pdf
+54.5 KB
+pdf
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\d3dcompiler_47.dll
+4 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\graphic.png
+11.4 KB
+png
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\icono.ico
+28.5 KB
+ico
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\icono.png
+2.9 KB
+png
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\libcrypto-1_1.dll
+3.3 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\libEGL.dll
+24.5 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\libffi-7.dll
+32 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\libGLESv2.dll
+3.2 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\libopenblas.EL2C6PLE4ZYW3ECEVIV3OXXGRN2NRFM2.gfortran-win_amd64.dll
+34.2 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\libssl-1_1.dll
+681.7 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Main.exe
+5.7 MB
+exe
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\marcadeagua.png
+14.2 KB
+png
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\MSVCP140.dll
+552.4 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\MSVCP140_1.dll
+30.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\MSVCP140_2.dll
+198.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\opengl32sw.dll
+20 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\PlantillaCompraPDF.pdf
+42.6 KB
+pdf
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\PlantillaReparacionWizard.pdf
+42.1 KB
+pdf
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\pyexpat.pyd
+187.9 KB
+pyd
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\pyside6.abi3.dll
+187.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\python3.dll
+60.9 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\python310.dll
+4.2 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt5Core.dll
+5.7 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt5DBus.dll
+426.5 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt5Gui.dll
+6.7 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt5Network.dll
+1.3 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt5Qml.dll
+3.4 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt5QmlModels.dll
+428.5 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt5Quick.dll
+4 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt5Svg.dll
+323 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt5Test.dll
+239.5 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt5WebSockets.dll
+146 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt5Widgets.dll
+5.2 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Bodymovin.dll
+225.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Charts.dll
+1.6 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6ChartsQml.dll
+481.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Concurrent.dll
+34.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Core.dll
+5.2 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6DataVisualization.dll
+1.1 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Gui.dll
+7 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6LabsAnimation.dll
+53.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6LabsFolderListModel.dll
+90.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6LabsQmlModels.dll
+172.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6LabsSettings.dll
+59.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6LabsSharedImage.dll
+54.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6LabsWavefrontMesh.dll
+58.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Multimedia.dll
+782.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6MultimediaQuick.dll
+140.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Network.dll
+1.4 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6OpenGL.dll
+1.8 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6OpenGLWidgets.dll
+54.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Positioning.dll
+471.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6PositioningQuick.dll
+210.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6PrintSupport.dll
+382.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Qml.dll
+4 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QmlCore.dll
+59.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QmlLocalStorage.dll
+59.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QmlModels.dll
+548.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QmlWorkerScript.dll
+72.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QmlXmlListModel.dll
+106.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Quick.dll
+4.6 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Quick3D.dll
+795.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Quick3DAssetImport.dll
+233.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Quick3DAssetUtils.dll
+170.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Quick3DEffects.dll
+257.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Quick3DHelpers.dll
+129.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Quick3DParticles.dll
+361.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Quick3DRuntimeRender.dll
+1.2 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Quick3DUtils.dll
+115.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QuickControls2.dll
+63.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QuickControls2Impl.dll
+207.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QuickDialogs2.dll
+116.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QuickDialogs2QuickImpl.dll
+568.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QuickDialogs2Utils.dll
+46.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QuickLayouts.dll
+155.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QuickParticles.dll
+499.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QuickShapes.dll
+198.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QuickTemplates2.dll
+1.5 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QuickTest.dll
+271.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QuickTimeline.dll
+87.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6QuickWidgets.dll
+107.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6RemoteObjects.dll
+732.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6RemoteObjectsQml.dll
+64.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Scxml.dll
+482.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6ScxmlQml.dll
+105.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Sensors.dll
+212.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6SensorsQuick.dll
+265.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6SerialPort.dll
+98.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6ShaderTools.dll
+2.9 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Sql.dll
+265.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6StateMachine.dll
+307.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6StateMachineQml.dll
+107.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Svg.dll
+348.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Test.dll
+269.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6VirtualKeyboard.dll
+915.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6WebChannel.dll
+222.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6WebEngineCore.dll
+113.1 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6WebEngineQuick.dll
+444.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6WebEngineQuickDelegatesQml.dll
+133.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6WebEngineWidgets.dll
+128.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6WebSockets.dll
+197.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6WebView.dll
+57.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6WebViewQuick.dll
+83.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt6Widgets.dll
+5.6 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt63DAnimation.dll
+481.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt63DCore.dll
+505.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt63DExtras.dll
+760.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt63DInput.dll
+383.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt63DLogic.dll
+67.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt63DQuick.dll
+252.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt63DQuickAnimation.dll
+68.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt63DQuickExtras.dll
+106.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt63DQuickInput.dll
+64.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt63DQuickRender.dll
+145.8 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt63DQuickScene2D.dll
+104.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\Qt63DRender.dll
+2.4 MB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\ReparacionWizard.pdf
+43.4 KB
+pdf
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\result.pdf
+46.9 KB
+pdf
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\select.pyd
+25.4 KB
+pyd
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\shiboken6.abi3.dll
+276.3 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\unicodedata.pyd
+1.1 MB
+pyd
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\VCRUNTIME140.dll
+94.9 KB
+dll
+C:\Users\ercas\Desktop\Trabajo-5-DIN\dist\Main\VCRUNTIME140_1.dll
+36.4 KB
+dll
+[Licence_Begin]
+118
+{\rtf1\ansi\ansicpg1252\deff0\deflang3082{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+\viewkind4\uc1\pard\cf0\fs20\par
+}
+ [Licence_End]
+[Registry]
+[Variables]
+[SCs]
+Desktop
+Casta PC
+<InstallPath>\
+
+icono.ico
+0
+[IFP_End]
+[Serials]
+[Serials_End]
+[Commands]
