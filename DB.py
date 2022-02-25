@@ -273,18 +273,18 @@ class DB(Ui_MainWindow):
                 # Elegimos el nombre del archivo en el que exportamos la gráfica como imagen
                 self.exporter.export('graphic.png')
 
-                self.outfile = "Compras.pdf"
+                # self.outfile = "Compras.pdf"
 
-                self.template = PdfReader("PlantillaReparacionWizard.pdf", decompress=False).pages[0]
-                self.template_obj = pagexobj(self.template)
-                self.canvas = Canvas(self.outfile)
+                # self.template = PdfReader("PlantillaReparacionWizard.pdf", decompress=False).pages[0]
+                # self.template_obj = pagexobj(self.template)
+                # self.canvas = Canvas(self.outfile)
 
-                self.xobj_name = makerl(self.canvas, self.template_obj)
-                self.canvas.doForm(self.xobj_name)
+                # self.xobj_name = makerl(self.canvas, self.template_obj)
+                # self.canvas.doForm(self.xobj_name)
 
-                ystart = 650
-                self.canvas.drawImage("graphic.png", 50, ystart, width=None,height=None,mask=None)
+                # ystart = 650
+                # self.canvas.drawImage("graphic.png", 50, ystart, width=None,height=None,mask=None)
 
-                self.canvas.save()
+                # self.canvas.save()
 
                 self.plt.hide()
