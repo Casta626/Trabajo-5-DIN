@@ -1,6 +1,6 @@
-## Welcome to GitHub Pages
+## Bienvenido a la página oficial de CastaPC
 
-You can use the [editor on GitHub](https://github.com/Casta626/Trabajo-5-DIN/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Puedes descargar nuestra aplicación [aquí](https://github.com/Casta626/Trabajo-5-DIN/releases/download/Installer/CastaPC-installer.exe) 
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
