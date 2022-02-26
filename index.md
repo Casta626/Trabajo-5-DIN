@@ -1,6 +1,6 @@
 ## Bienvenido a la página oficial de CastaPC
 
-Puedes descargar nuestra aplicación [aquí](https://github.com/Casta626/Trabajo-5-DIN/releases/download/Installer/CastaPC-installer.exe) 
+Puedes descargar nuestra aplicación [aquí](https://github.com/Casta626/Trabajo-5-DIN/releases/download/Installer/CastaPC-installer.exe).
 
 <!---
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
