@@ -11,6 +11,7 @@ class Test (unittest.TestCase):
             app= QApplication([])
         
         window=MainWindow()
+        self.texto = "a"
         window.checkBoxCaja.setChecked(True)
         window.contadorProductos()
         self.assertEqual(window.datosProductosTotal, "1 ")
@@ -18,7 +19,3 @@ class Test (unittest.TestCase):
         
 if __name__ == '__main__':
     unittest.main()
-
-
-    
-    
