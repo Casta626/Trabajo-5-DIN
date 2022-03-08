@@ -1,5 +1,6 @@
 import unittest
 from PySide6.QtWidgets import QApplication
+from DB import DB
 from Main import MainWindow
 
 
@@ -11,11 +12,20 @@ class Test (unittest.TestCase):
             app= QApplication([])
         
         window=MainWindow()
-        self.texto = "a"
-        window.checkBoxCaja.setChecked(True)
-        window.contadorProductos()
-        self.assertEqual(window.datosProductosTotal, "1 ")
-        self.assertEqual(window.datosPrecioTotal, 120.43 )
+        # DB.lanzarDB(self)
+        # DB.nueva(self)
+        # self.contador = 0
+        # window.actionInsertar.is
+        
+
+
+
+
+
+        # window.checkBoxCaja.setChecked(True)
+        # window.contadorProductos()
+        # self.assertEqual(window.datosProductosTotal, "1 ")
+        # self.assertEqual(window.datosPrecioTotal, 120.43 )
         
 if __name__ == '__main__':
     unittest.main()
