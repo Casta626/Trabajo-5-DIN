@@ -706,5 +706,3 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
         # Usando http o https también se pueden cargar páginas web
         self.webEngineWeb.load(QUrl(self.rutaConPDF2.absolute().as_uri()))
         # self.web.load(QUrl("https://github.com/"))
-
-    
