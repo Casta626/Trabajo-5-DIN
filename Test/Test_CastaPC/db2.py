@@ -70,10 +70,10 @@ class DB(Ui_MainWindow):
                 # Ponemos la fila inicial a un valor que indica que no está seleccionada ninguna fila
                 self.fila = -1
 
-                self.contador = 8
-                while self.contador<100:
-                    self.contador +=1
-                    self.query = QSqlQuery("INSERT into productos values ("+self.contador+", Caja Extended ATX con Cristal Templado,Caja,120.43,5)",db=self.db)
+                # self.contador = 8
+                # while self.contador<100:
+                #     self.contador +=1
+                #     self.query = QSqlQuery("INSERT into productos values ("+self.contador+", Caja Extended ATX con Cristal Templado,Caja,120.43,5)",db=self.db)
 
         ###########################        Datos para la los Productos       #####################################
 
@@ -129,6 +129,12 @@ class DB(Ui_MainWindow):
                 while self.queryFAPrecio.next():
                         self.idFAPrecio=self.queryFAPrecio.value(0)
                         print(self.idFAPrecio)
+
+
+                self.queryID = QSqlQuery("SELECT id_producto FROM productos",db=self.db)
+                while self.queryID.next():
+                        a=self.queryID.value(0)
+                        print(a)
 
         #########################       Valores para la imagen de la grafica    ##############################################
 

@@ -1,7 +1,7 @@
 import unittest
 from PySide6.QtWidgets import QApplication
-from DB import DB
-from Main import MainWindow
+from db2 import DB
+from Main_pruebas import MainWindow
 
 
 class Test (unittest.TestCase):

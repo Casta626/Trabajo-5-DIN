@@ -13,7 +13,7 @@ import textwrap
 from datetime import datetime
 from PySide6.QtSql import QSqlDatabase, QSqlQuery, QSqlRelation, QSqlRelationalTableModel
 from PySide6.QtCore import Qt,QUrl
-from DB import DB
+from db2 import DB
 from Graficas import Graficas
 from PySide6.QtWebEngineCore import QWebEngineSettings
 # from Qt import QtGui
@@ -63,6 +63,8 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
     def mostrarComponente(self):
         
         self.mainToggle.show()
+
+    
 
 
     def __init__(self):
@@ -520,7 +522,11 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
 
         next.clicked.connect(self.actualizarDatosWizardReparacion)
 
-        
+        self.contador2 = 8
+
+    def generaDatos(self):
+        self.contador2 +=1
+        print(self.contador2)
 
     # Codigo db en caso de emergencia.
     def actualizarDatosWizardReparacion(self):

@@ -13,7 +13,7 @@ import textwrap
 from datetime import datetime
 from PySide6.QtSql import QSqlDatabase, QSqlQuery, QSqlRelation, QSqlRelationalTableModel
 from PySide6.QtCore import Qt,QUrl
-from DB import DB
+from db2 import DB
 from Graficas import Graficas
 from PySide6.QtWebEngineCore import QWebEngineSettings
 # from Qt import QtGui
@@ -22,7 +22,7 @@ import sys
 
 from ui_main import Ui_MainWindow
 from rebotines import MainWindowRebotines
-from Main import MainWindow
+from Main_pruebas import MainWindow
 
 basedir = os.path.dirname("CastaPC.ico")
 
