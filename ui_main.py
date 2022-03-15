@@ -25,6 +25,7 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QFormLayout,
 from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtWebEngineCore import QWebEngineSettings
 import recursos
+from rebotines import MainWindowRebotines
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -52,6 +53,12 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
+
+        self.tabComponente = QWidget()
+        self.tabComponente.setObjectName(u"tabComponente")
+        self.verticalLayout = QVBoxLayout(self.tabComponente)
+
+
         self.tabCompras = QWidget()
         self.tabCompras.setObjectName(u"tabCompras")
         self.verticalLayout = QVBoxLayout(self.tabCompras)
@@ -149,6 +156,8 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.botonAceptarCompras)
 
+        
+
         icon3 = QIcon()
         icon3.addFile(u":/CastaPC/CompraIcono.png", QSize(), QIcon.Selected, QIcon.Off)
         self.tabWidget.addTab(self.tabCompras, icon3, "")
@@ -159,7 +168,12 @@ class Ui_MainWindow(object):
         self.botonReparacion = QPushButton(self.tabReparacion)
         self.botonReparacion.setObjectName(u"botonReparacion")
 
+        self.botonComponente = QPushButton(self.tabComponente)
+        self.botonComponente.setObjectName(u"botonComponente")
+        self.botonComponente.setText("Componente")
+
         self.gridLayout_2.addWidget(self.botonReparacion, 1, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.botonComponente)
 
         self.labelImagenReparacion = QLabel(self.tabReparacion)
         self.labelImagenReparacion.setObjectName(u"labelImagenReparacion")
@@ -204,10 +218,10 @@ class Ui_MainWindow(object):
 
         self.formLayout.setWidget(2, QFormLayout.LabelRole, self.labelDescripcionDB)
 
-        self.comboBoxDescripcionDB = QComboBox(self.groupBox)
-        self.comboBoxDescripcionDB.setObjectName(u"comboBoxDescripcionDB")
+        self.lineEditDescripcionDB = QLineEdit(self.groupBox)
+        self.lineEditDescripcionDB.setObjectName(u"lineEditDescripcionDB")
 
-        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.comboBoxDescripcionDB)
+        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.lineEditDescripcionDB)
 
         self.labelPrecioDB = QLabel(self.groupBox)
         self.labelPrecioDB.setText("Precio")
@@ -216,7 +230,7 @@ class Ui_MainWindow(object):
         self.formLayout.setWidget(3, QFormLayout.LabelRole, self.labelPrecioDB)
 
         self.lineEditPrecioDB = QLineEdit(self.groupBox)
-        self.lineEditPrecioDB.setObjectName(u"comboBoxDescripcionDB")
+        self.lineEditPrecioDB.setObjectName(u"lineEditDescripcionDB")
 
         self.formLayout.setWidget(3, QFormLayout.FieldRole, self.lineEditPrecioDB)
 
@@ -227,7 +241,7 @@ class Ui_MainWindow(object):
         self.formLayout.setWidget(4, QFormLayout.LabelRole, self.labelStockDB)
 
         self.lineEditStockDB = QLineEdit(self.groupBox)
-        self.lineEditStockDB.setObjectName(u"comboBoxDescripcionDB")
+        self.lineEditStockDB.setObjectName(u"lineEditDescripcionDB")
 
         self.formLayout.setWidget(4, QFormLayout.FieldRole, self.lineEditStockDB)
 
@@ -253,15 +267,15 @@ class Ui_MainWindow(object):
 
         self.hLayoutBotonesInformes = QHBoxLayout()
         self.hLayoutBotonesInformes.setObjectName(u"hLayoutBotonesInformes")
-        self.botonReparacionInforme = QPushButton(self.tabInformes)
-        self.botonReparacionInforme.setObjectName(u"botonReparacionInforme")
-
-        self.hLayoutBotonesInformes.addWidget(self.botonReparacionInforme)
-
         self.botonCompraInforme = QPushButton(self.tabInformes)
         self.botonCompraInforme.setObjectName(u"botonCompraInforme")
 
         self.hLayoutBotonesInformes.addWidget(self.botonCompraInforme)
+
+        self.botonReparacionInforme = QPushButton(self.tabInformes)
+        self.botonReparacionInforme.setObjectName(u"botonReparacionInforme")
+
+        self.hLayoutBotonesInformes.addWidget(self.botonReparacionInforme)
 
 
         self.verticalLayout_4.addLayout(self.hLayoutBotonesInformes)
@@ -287,6 +301,8 @@ class Ui_MainWindow(object):
         self.menuBase_de_Datos.addAction(self.actionInsertar)
         self.menuBase_de_Datos.addAction(self.actionModificar)
         self.menuBase_de_Datos.addAction(self.actionEliminar)
+
+        self.tabWidget.addTab(self.tabComponente, "")
 
         self.retranslateUi(MainWindow)
 
@@ -337,9 +353,10 @@ class Ui_MainWindow(object):
         self.labelProductoDB.setText(QCoreApplication.translate("MainWindow", u"Producto", None))
         self.labelDescripcionDB.setText(QCoreApplication.translate("MainWindow", u"Descripci\u00f3n", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabDB), QCoreApplication.translate("MainWindow", u"Base de Datos", None))
-        self.botonReparacionInforme.setText(QCoreApplication.translate("MainWindow", u"Informe de Compras", None))
-        self.botonCompraInforme.setText(QCoreApplication.translate("MainWindow", u"Informe de la Reparaci\u00f3n", None))
+        self.botonCompraInforme.setText(QCoreApplication.translate("MainWindow", u"Informe de Compras", None))
+        self.botonReparacionInforme.setText(QCoreApplication.translate("MainWindow", u"Informe de la Reparaci\u00f3n", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabInformes), QCoreApplication.translate("MainWindow", u"Informes", None))
         self.menuBase_de_Datos.setTitle(QCoreApplication.translate("MainWindow", u"Base de Datos", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tabComponente), QCoreApplication.translate("MainWindow", u"Componente", None))
     # retranslateUi
 

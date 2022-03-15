@@ -1,7 +1,8 @@
+import os
 from pathlib import Path
 import sys
 from PySide6.QtGui import QPixmap
-from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QWizard, QWizardPage, QLineEdit, QHBoxLayout, QLabel, QComboBox, QTextEdit, QVBoxLayout,QMessageBox, QAbstractItemView
+from PySide6.QtWidgets import QTabWidget, QApplication, QMainWindow, QPushButton, QWizard, QWizardPage, QLineEdit, QHBoxLayout, QLabel, QComboBox, QTextEdit, QVBoxLayout,QMessageBox, QAbstractItemView
 from reportlab.pdfgen.canvas import Canvas
 from pdfrw import PdfReader
 from pdfrw.buildxobj import pagexobj
@@ -15,9 +16,15 @@ from PySide6.QtCore import Qt,QUrl
 from DB import DB
 from Graficas import Graficas
 from PySide6.QtWebEngineCore import QWebEngineSettings
-
+# from Qt import QtGui
+from PySide6 import QtWidgets, QtGui
+import sys
 
 from ui_main import Ui_MainWindow
+from rebotines import MainWindowRebotines
+
+basedir = os.path.dirname("CastaPC.ico")
+
 class MainWindow(DB,QMainWindow,Ui_MainWindow):
 
     def contadorProductos(self):
@@ -44,9 +51,46 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
         self.datosPrecioTotal = self.precioTotal
         self.datosProductosTotal = self.datosCheckBox
 
+        # self.setWindowIcon(QtGui.QIcon(os.path.join(basedir, 'sg.ico')))
+        # app.setWindowIcon(QtGui.QIcon('sg.ico'))
+        # try:
+        #     from ctypes import windll  # Only exists on Windows.
+        #     myappid = 'mycompany.myproduct.subproduct.version'
+        #     windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+        # except ImportError:
+        #     pass
+
+    def mostrarComponente(self):
+        
+        self.mainToggle.show()
+
+
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.mainToggle = MainWindowRebotines()
+        
+
+        # self.horizontalLayout_10 = QHBoxLayout(mainToggle)
+
+        # self.tabComponente(self.horizontalLayout_10)
+
+
+
+
+        try:
+            from ctypes import windll  # Only exists on Windows.
+            myappid = 'mycompany.myproduct.subproduct.version'
+            windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+        except ImportError:
+            pass
+
+        # self.tabComponente = QTabWidget(self.centralWidget)
+
+        self.indice = 0
+        self.indice2 = 0
+        self.indice3 = 0
+        self.indice4 = 0
 
         DB.lanzarDB(self)
 
@@ -58,6 +102,8 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
         self.botonReparacionInforme.clicked.connect(self.mostrarReparacionPDF)
 
         self.botonAceptarCompras.clicked.connect(self.contadorProductos)
+
+        self.botonComponente.clicked.connect(self.mostrarComponente)
 
 
         self.datosPrecioTotal = 0
@@ -662,9 +708,3 @@ class MainWindow(DB,QMainWindow,Ui_MainWindow):
         # self.web.load(QUrl("https://github.com/"))
 
     
-
-app = QApplication(sys.argv)
-window = MainWindow()
-window.setWindowTitle('Casta PC')
-window.show()
-app.exec()
